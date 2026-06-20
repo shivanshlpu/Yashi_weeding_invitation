@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal — Boys' Side Wedding Video Complete Guide</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --cream: #F5F0E8;
+            --cream-dark: #EDE5D8;
+            --gold: #C8A84B;
+            --gold-light: #E8D5A0;
+            --navy: #1B3A5A;
+            --indigo: #28527A;
+            --deep-green: #2D4A35;
+            --text-dark: #1A1208;
+            --text-mid: #3D2B1A;
+            --text-soft: #7A6550;
+            --border: #D4C5A9;
+            --card-bg: #FDFAF5;
+            --tag-bg: #1B3A5A;
+            --tag-text: #F5F0E8;
+            --ae-bg: #1A1A2E;
+            --ae-accent: #E8A020;
+            --ae-text: #E8E0D0;
+            --copy-bg: #0F3460;
+            --copy-hover: #16213E;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--cream);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* ── HEADER ── */
+        header {
+            background: linear-gradient(135deg, #1B3A5A 0%, #0E2438 50%, #1A1208 100%);
+            color: #F5F0E8;
+            text-align: center;
+            padding: 56px 24px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8A84B' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        header .subtitle {
+            font-family: 'Great Vibes', cursive;
+            font-size: 22px;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        header .tagline {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C8A84B;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        header .divider {
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
+            margin: 20px auto;
+            opacity: 0.6;
+        }
+
+        header .groom-badge {
+            display: inline-block;
+            background: rgba(200, 168, 75, 0.2);
+            border: 1px solid rgba(200, 168, 75, 0.5);
+            color: var(--gold-light);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 18px;
+            border-radius: 20px;
+            margin-top: 14px;
+        }
+
+        /* ── LAYOUT ── */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ── HOSTED-BY BANNER ── */
+        .hosted-by {
+            max-width: 1000px;
+            margin: 32px auto 0;
+            text-align: center;
+            padding: 14px 20px;
+            background: var(--card-bg);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            color: var(--text-mid);
+        }
+
+        .hosted-by strong {
+            color: var(--navy);
+            font-size: 20px;
+        }
+
+        /* ── COUPLE INFO BOX ── */
+        .couple-info {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
+            margin: 20px auto 36px;
+            max-width: 1000px;
+            padding: 32px 36px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .couple-info h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .couple-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        @media(max-width:640px) {
+            .couple-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .family-card {
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 22px;
+        }
+
+        .family-card.highlight-groom {
+            border-color: var(--gold);
+            background: #F2F6FA;
+        }
+
+        .family-card .role {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .family-card .main-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .family-card .detail-row {
+            font-size: 13px;
+            color: var(--text-mid);
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .family-card .detail-row strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .family-card .address {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border);
+            font-size: 12px;
+            color: var(--text-soft);
+            font-style: italic;
+        }
+
+        /* ── VENUES & DIRECTIONS BOX ── */
+        .venues-box {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
+            margin: 0 auto 36px;
+            max-width: 1000px;
+            padding: 28px 36px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .venues-box h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+        }
+
+        .venues-box .venues-note {
+            font-size: 12.5px;
+            color: var(--text-soft);
+            margin-bottom: 20px;
+        }
+
+        .venue-item {
+            display: flex;
+            gap: 18px;
+            padding: 16px 0;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .venue-item:last-child {
+            border-bottom: none;
+        }
+
+        .venue-order {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--gold-light);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .venue-text .venue-tag {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 3px;
+        }
+
+        .venue-text .venue-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+        }
+
+        .venue-text .venue-addr {
+            font-size: 13px;
+            color: var(--text-mid);
+            margin-bottom: 3px;
+        }
+
+        .venue-text .venue-when {
+            font-size: 12px;
+            color: var(--text-soft);
+        }
+
+        /* ── DATES BOX ── */
+        .dates-box {
+            background: var(--navy);
+            color: #F5F0E8;
+            border-radius: 16px;
+            margin: 0 auto 36px;
+            max-width: 1000px;
+            padding: 28px 36px;
+        }
+
+        .dates-box h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .dates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .date-item {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(200, 168, 75, 0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+        }
+
+        .date-item .date-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .date-item .event-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 2px 0;
+        }
+
+        .date-item .time-label {
+            font-size: 12px;
+            color: rgba(245, 240, 232, 0.6);
+        }
+
+        /* ── SECTION HEADER ── */
+        .section-header {
+            text-align: center;
+            padding: 44px 20px 24px;
+        }
+
+        .section-header .eyebrow {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .section-header p {
+            font-size: 14px;
+            color: var(--text-soft);
+            margin-top: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── SCENE CARD ── */
+        .scene-card {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border);
+            border-radius: 18px;
+            margin: 0 auto 32px;
+            max-width: 1000px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .scene-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 28px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(to right, rgba(200, 168, 75, 0.06), transparent);
+        }
+
+        .scene-number {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: #F5F0E8;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .scene-title-block .scene-event {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .scene-title-block h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .scene-duration {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-soft);
+            background: var(--cream-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .scene-body {
+            padding: 24px 28px;
+        }
+
+        /* ── FLASHCARD INFO BOX ── */
+        .flashcard-info {
+            background: linear-gradient(135deg, #F2F6FA, #FFF8EE);
+            border: 1.5px solid #C9D8E5;
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-bottom: 22px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media(max-width:640px) {
+            .flashcard-info {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .fc-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .fc-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--navy);
+            opacity: 0.75;
+        }
+
+        .fc-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .fc-divider {
+            grid-column: 1 / -1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #D4C5A9, transparent);
+            margin: 4px 0;
+        }
+
+        .flashcard-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .flashcard-label::before {
+            content: '💌';
+        }
+
+        /* ── PROMPT BLOCK ── */
+        .prompt-section {
+            margin-bottom: 20px;
+        }
+
+        .prompt-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .prompt-label .badge {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        .badge.img {
+            background: var(--deep-green);
+            color: #fff;
+        }
+
+        .badge.ae {
+            background: var(--ae-bg);
+            color: var(--ae-accent);
+        }
+
+        .prompt-label span {
+            font-size: 12px;
+            color: var(--text-soft);
+        }
+
+        .prompt-box {
+            background: #F7F4EE;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+            line-height: 1.75;
+            color: var(--text-mid);
+            position: relative;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .prompt-box.ae-style {
+            background: #0D0D1F;
+            color: #DDD8C8;
+            border-color: #2A2A4A;
+            font-size: 13px;
+        }
+
+        .prompt-box .ae-highlight {
+            color: #E8A020;
+            font-weight: 600;
+        }
+
+        .prompt-box .text-color {
+            color: #7EC8E3;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--copy-bg);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 6px 14px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: background 0.2s;
+            z-index: 2;
+        }
+
+        .copy-btn:hover {
+            background: var(--copy-hover);
+        }
+
+        .copy-btn.copied {
+            background: #2D7A3A;
+        }
+
+        /* ── STYLE GUIDE ── */
+        .style-guide {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border);
+            border-radius: 18px;
+            max-width: 1000px;
+            margin: 0 auto 32px;
+            padding: 28px 32px;
+        }
+
+        .style-guide h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .sg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+        }
+
+        .sg-item {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            background: var(--cream);
+        }
+
+        .sg-item .sg-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-soft);
+            margin-bottom: 6px;
+        }
+
+        .sg-item .sg-value {
+            font-size: 13px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .color-swatch {
+            width: 100%;
+            height: 36px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: var(--text-soft);
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        footer strong {
+            color: var(--navy);
+        }
+
+        @media(max-width:640px) {
+            .scene-header {
+                flex-wrap: wrap;
+            }
+
+            .scene-duration {
+                order: 3;
+            }
+
+            .scene-body {
+                padding: 18px 16px;
+            }
+
+            .couple-info,
+            .dates-box,
+            .venues-box {
+                padding: 20px;
+            }
+
+            .venue-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════════ HEADER ══════════════ -->
+    <header>
+        <div class="subtitle">Shubh Vivah</div>
+        <h1>Vishal Gupta — Boys' Side</h1>
+        <div class="divider"></div>
+        <div class="tagline">Wedding Invitation Video — Complete Production Guide</div>
+        <div style="font-size:13px;color:rgba(245,240,232,0.65);margin-top:12px;">4 July – 6 July 2026 &nbsp;|&nbsp; All
+            Image Prompts + After Effects Text Prompts</div>
+        <div class="groom-badge">🤵 Boys' Side Functions</div>
+    </header>
+
+    <div class="hosted-by">
+        🙏 Cordially Invited By: <strong>Shri Dhanji Sah &amp; Family</strong>
+    </div>
+
+    <!-- ══════════════ GROOM INFO ══════════════ -->
+    <div class="container">
+        <div class="couple-info">
+            <h2>🤵 Groom Family Details</h2>
+            <div class="couple-grid">
+
+                <!-- GROOM -->
+                <div class="family-card highlight-groom">
+                    <div class="role">🤵 Groom</div>
+                    <div class="main-name" style="font-weight:900;"><strong>Chi. Vishal Gupta</strong></div>
+                    <div class="detail-row"><strong>Dada-Dadi:</strong><br>Smt. Kaushalya Devi &amp; Shri Dhanji Sah
+                    </div>
+                    <div class="detail-row"><strong>Maa-Papa:</strong><br>Smt. Munni Devi &amp; Shri Rajesh Gupta</div>
+                    <div class="address">📍 Gram+PO: Shastrinagar, Block No. 3,<br>Kadma, Jamshedpur – 831005</div>
+                </div>
+
+                <!-- BRIDE (reference only) -->
+                <div class="family-card">
+                    <div class="role">👰 Bride (Reference)</div>
+                    <div class="main-name" style="font-weight:900;"><strong>Ayu. Yashwani Gupta</strong></div>
+                    <div class="detail-row"><strong>Dada-Dadi:</strong><br>Smt. Rajmani Devi &amp; Shri Balkeshwar Gupta
+                    </div>
+                    <div class="detail-row"><strong>Maa-Papa:</strong><br>Smt. Kiran &amp; Shri Krishna Kumar Gupta
+                    </div>
+                    <div class="address">📍 Purana Bus Stand, SP Bangla ke Piche,<br>Shahdol (M.P.)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- VENUES & DIRECTIONS -->
+        <div class="venues-box">
+            <h2>📍 Venues &amp; Directions</h2>
+            <div class="venues-note">In order: Wedding venue first, then where the Baraat departs from, then the venue
+                for Haldi / Mehndi / Matkor / Sangeet.</div>
+
+            <div class="venue-item">
+                <div class="venue-order">1</div>
+                <div class="venue-text">
+                    <div class="venue-tag">Wedding Venue · Shubh Vivah &amp; Preetibhoj</div>
+                    <div class="venue-name">Khalsa Club, Bistupur, Jamshedpur</div>
+                    <div class="venue-addr">Preetibhoj (Reception) from 7:00 PM &nbsp;|&nbsp; Shubh Vivah (Wedding) —
+                        night</div>
+                    <div class="venue-when">6 July 2026 — Monday</div>
+                </div>
+            </div>
+
+            <div class="venue-item">
+                <div class="venue-order">2</div>
+                <div class="venue-text">
+                    <div class="venue-tag">Baraat Starting Point</div>
+                    <div class="venue-name">Peepaldhari Shiv Hanuman Mandir</div>
+                    <div class="venue-addr">Shastrinagar, Block No. 3, Kadma — departs for Khalsa Club, Bistupur</div>
+                    <div class="venue-when">6 July 2026 — Monday, 6:00 PM</div>
+                </div>
+            </div>
+
+            <div class="venue-item">
+                <div class="venue-order">3</div>
+                <div class="venue-text">
+                    <div class="venue-tag">Haldi · Mehndi · Matkor · Sangeet Venue</div>
+                    <div class="venue-name">G.P. Slope Club House</div>
+                    <div class="venue-addr">KF1-Flat, Kadma — all pre-wedding ceremonies held here</div>
+                    <div class="venue-when">4 – 6 July 2026</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DATES -->
+        <div class="dates-box">
+            <h2>📅 Boys' Side — All Events &amp; Dates</h2>
+            <div class="dates-grid">
+                <div class="date-item">
+                    <div class="date-label">4 July 2026 — SAT</div>
+                    <div class="event-name">Shubh Matkor</div>
+                    <div class="time-label">🌅 Morning</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">5 July 2026 — SUN</div>
+                    <div class="event-name">Mehndi</div>
+                    <div class="time-label">🌅 Morning</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">5 July 2026 — SUN</div>
+                    <div class="event-name">Engagement / Sangeet</div>
+                    <div class="time-label">🌆 Evening</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">6 July 2026 — MON</div>
+                    <div class="event-name">Haldi Kalash &amp; Satyanarayan Katha</div>
+                    <div class="time-label">🌅 Morning</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">6 July 2026 — MON</div>
+                    <div class="event-name">Mandap &amp; Devpujan</div>
+                    <div class="time-label">☀️ Midday</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">6 July 2026 — MON</div>
+                    <div class="event-name">Baraat Departure 🚩</div>
+                    <div class="time-label">🌆 6:00 PM</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">6 July 2026 — MON</div>
+                    <div class="event-name">Preetibhoj 🍽️</div>
+                    <div class="time-label">🌆 7:00 PM</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">6 July 2026 — MON</div>
+                    <div class="event-name">Subh Vivah 💍</div>
+                    <div class="time-label">🎊 Night — Wedding Ceremony</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STYLE GUIDE -->
+        <div class="style-guide">
+            <h3>🎨 Master Style Guide — Use in ALL Scenes (Do Not Change)</h3>
+            <div class="sg-grid">
+                <div class="sg-item">
+                    <div class="color-swatch" style="background:#F5F0E8;"></div>
+                    <div class="sg-label">Background</div>
+                    <div class="sg-value">#F5F0E8 (Warm Cream)<br><small>Textured paper look</small></div>
+                </div>
+                <div class="sg-item">
+                    <div class="color-swatch" style="background:#1B3A5A;"></div>
+                    <div class="sg-label">Title Text Color</div>
+                    <div class="sg-value">#1B3A5A (Deep Navy)<br><small>For event names / headings</small></div>
+                </div>
+                <div class="sg-item">
+                    <div class="color-swatch" style="background:#2D1A0A;"></div>
+                    <div class="sg-label">Body Text Color</div>
+                    <div class="sg-value">#2D1A0A (Dark Brown)<br><small>Date, Venue, Time text</small></div>
+                </div>
+                <div class="sg-item">
+                    <div class="color-swatch" style="background:#C8A84B;"></div>
+                    <div class="sg-label">Accent / Gold</div>
+                    <div class="sg-value">#C8A84B (Wedding Gold)<br><small>Dividers, icons, decorative</small></div>
+                </div>
+                <div class="sg-item">
+                    <div class="sg-label">Video Format</div>
+                    <div class="sg-value">9:16 Portrait<br>1080 × 1920 px</div>
+                </div>
+                <div class="sg-item">
+                    <div class="sg-label">Total Duration</div>
+                    <div class="sg-value">~90–100 seconds<br>9 scenes total</div>
+                </div>
+                <div class="sg-item">
+                    <div class="sg-label">Display Font</div>
+                    <div class="sg-value">Great Vibes / Pinyon Script<br><small>For event calligraphy titles</small>
+                    </div>
+                </div>
+                <div class="sg-item">
+                    <div class="sg-label">Body Font</div>
+                    <div class="sg-value">Cormorant Garamond<br><small>For all detail text</small></div>
+                </div>
+                <div class="sg-item">
+                    <div class="sg-label">Transition</div>
+                    <div class="sg-value">Soft cross-dissolve fade<br>0.8s between scenes</div>
+                </div>
+                <div class="sg-item">
+                    <div class="sg-label">Image Style</div>
+                    <div class="sg-value">Watercolor illustration<br>Indian wedding aesthetic</div>
+                </div>
+            </div>
+            <div
+                style="margin-top:18px;padding:14px 16px;background:#F2F6FA;border-radius:8px;border:1px solid #C9D8E5;font-size:13px;color:#3D2B1A;">
+                <strong>⚠️ IMPORTANT RULE FOR ALL TEXT IN VIDEO:</strong> All text must be placed in the <strong>upper
+                    center zone</strong> of each scene (top 55% of frame). The bottom 45% always shows the illustrated
+                groom + decorations with NO text overlay. Text must never be placed over illustrated elements — only
+                over the clean cream background area. Minimum font size: 32px for body text, 64px for titles, 48px for
+                dates.
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════ SCENES SECTION ══════════════ -->
+    <div class="section-header">
+        <div class="eyebrow">Production Guide</div>
+        <h2>Scene-by-Scene Prompts</h2>
+        <p>Each scene has a 💌 Flashcard Info summary, an AI Image Prompt, and an After Effects Text Animation Prompt.
+            Copy each separately.</p>
+    </div>
+
+    <!-- ══ SCENE 1 ══ -->
+    <div class="container">
+        <div class="scene-card">
+            <div class="scene-header">
+                <div class="scene-number">1</div>
+                <div class="scene-title-block">
+                    <div class="scene-event">Opening Cover</div>
+                    <h3>Title Card — Groom Introduction</h3>
+                </div>
+                <div class="scene-duration">⏱ ~10 seconds</div>
+            </div>
+            <div class="scene-body">
+
+                <div class="flashcard-label">Flashcard Text Information (what appears on screen)</div>
+                <div class="flashcard-info">
+                    <div class="fc-item">
+                        <div class="fc-label">Monogram</div>
+                        <div class="fc-value">V ❧ Y</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Groom Name</div>
+                        <div class="fc-value">Chi. Vishal Gupta</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Groom Parents</div>
+                        <div class="fc-value">S/o Smt. Munni Devi &amp; Shri Rajesh Gupta</div>
+                    </div>
+                    <div class="fc-divider"></div>
+                    <div class="fc-item">
+                        <div class="fc-label">Weds</div>
+                        <div class="fc-value">Ayu. Yashwani Gupta</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Bride Parents</div>
+                        <div class="fc-value">D/o Smt. Kiran &amp; Shri Krishna Kumar Gupta</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Opening Blessing</div>
+                        <div class="fc-value">॥ Shri Ganeshay Namah ॥</div>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label">
+                        <span class="badge img">🖼 Image Prompt</span>
+                        <span>Paste into Midjourney / DALL-E 3 / Adobe Firefly</span>
+                    </div>
+                    <div class="prompt-box" id="img1">Indian wedding invitation digital illustration. Portrait 9:16
+                        format, 1080x1920px. Background: warm cream textured paper (#F5F0E8). Bottom 45% of frame: A
+                        groom viewed from behind, standing tall and confident in an ivory-white sherwani with gold
+                        embroidery, a maroon-and-gold safa turban with a kalgi ornament, and a string of white flowers
+                        (sehra) hanging just above his shoulders — facing a beautifully decorated dark teak wood
+                        mandap/gazebo adorned with marigold garlands, pink roses, hanging brass diyas and brass kalash
+                        pots at the base. Left side: large lush tropical banana leaves from upper-left corner. Upper
+                        right: golden hanging chandelier-style diya ornaments on golden strings. Top 55% of frame:
+                        completely clean, empty cream background with subtle linen paper texture — NO decorations, NO
+                        text, NO elements in this zone. Soft watercolor illustration style, elegant Indian wedding
+                        aesthetic, no text, no face visible.
+                        <button class="copy-btn" onclick="copyText('img1', this)">COPY</button>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label">
+                        <span class="badge ae">🎬 After Effects Prompt</span>
+                        <span>Text animation spec for this scene</span>
+                    </div>
+                    <div class="prompt-box ae-style" id="ae1"><span class="ae-highlight">SCENE 1 — Opening Cover | After
+                            Effects Text Spec</span>
+                        Canvas: 1080 x 1920px | Duration: 10s | Safe Zone: Top 55% only (Y: 0 to 1056px)
+                        All text must stay within Y=0 to Y=1056. Nothing below Y=1056.
+
+                        <span class="text-color">Layer 1 — Blessing</span>
+                        Text : "|| Shri Ganeshay Namah ||"
+                        Font : Cormorant Garamond Italic, 36px
+                        Color : #28527A
+                        Position : X=540, Y=100 — centered
+                        Animation: Opacity 0→100%, Duration 0.5s, Delay 0s
+
+                        <span class="text-color">Layer 2 — Monogram</span>
+                        Text : "V ❧ Y"
+                        Font : Great Vibes, 80px
+                        Color : #C8A84B
+                        Position : X=540, Y=200 — centered
+                        Animation: Scale 0.7→1.0 + Fade In, Duration 0.7s, Delay 0.4s, Ease Out
+
+                        <span class="text-color">Layer 3 — Groom Name</span>
+                        Text : "Chi. Vishal Gupta"
+                        Font : Great Vibes, 100px, BOLD WEIGHT
+                        Color : #1B3A5A
+                        Position : X=540, Y=390 — centered
+                        Animation: Opacity 0→100% + Y from +20→0, Duration 0.8s, Delay 0.8s
+                        ★ Make this text BOLD — use the Bold or Heavy variant of Great Vibes / Pinyon Script
+
+                        <span class="text-color">Layer 4 — Groom Parents</span>
+                        Text : "S/o Smt. Munni Devi & Shri Rajesh Gupta"
+                        Font : Cormorant Garamond, 30px
+                        Color : #2D1A0A
+                        Position : X=540, Y=500 — centered, max width 860px
+                        Animation: Opacity 0→100%, Duration 0.5s, Delay 1.2s
+
+                        <span class="text-color">Layer 5 — Divider</span>
+                        Text : "——— weds ———"
+                        Font : Cormorant Garamond, 28px
+                        Color : #C8A84B
+                        Position : X=540, Y=590 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.5s
+
+                        <span class="text-color">Layer 6 — Bride Name</span>
+                        Text : "Ayu. Yashwani Gupta"
+                        Font : Great Vibes, 90px, BOLD WEIGHT
+                        Color : #7A1A3A
+                        Position : X=540, Y=730 — centered
+                        Animation: Opacity 0→100% + Y from +20→0, Duration 0.8s, Delay 1.8s
+                        ★ Make this text BOLD — use the Bold or Heavy variant of Great Vibes / Pinyon Script
+
+                        <span class="text-color">Layer 7 — Bride Parents</span>
+                        Text : "D/o Smt. Kiran & Shri Krishna Kumar Gupta"
+                        Font : Cormorant Garamond, 30px
+                        Color : #2D1A0A
+                        Position : X=540, Y=840 — centered, max width 860px
+                        Animation: Opacity 0→100%, Duration 0.5s, Delay 2.2s
+
+                        <span class="ae-highlight">RULES:</span>
+                        - All 7 layers must fit between Y=100 and Y=900 — check spacing before rendering
+                        - All text center-aligned, max width 900px — no text touches frame edges
+                        - Do NOT add any text below Y=1056
+                        - Drop shadow on all layers: color #3D2B1A, opacity 8%, distance 1px
+                    </div>
+                    <button class="copy-btn" onclick="copyText('ae1', this)">COPY</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══ SCENE 2 ══ -->
+        <div class="scene-card">
+            <div class="scene-header">
+                <div class="scene-number">2</div>
+                <div class="scene-title-block">
+                    <div class="scene-event">4 July 2026 — SAT Morning</div>
+                    <h3>Shubh Matkor</h3>
+                </div>
+                <div class="scene-duration">⏱ ~10 seconds</div>
+            </div>
+            <div class="scene-body">
+
+                <div class="flashcard-label">Flashcard Text Information (what appears on screen)</div>
+                <div class="flashcard-info">
+                    <div class="fc-item">
+                        <div class="fc-label">Event Name</div>
+                        <div class="fc-value">Shubh Matkor</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Date</div>
+                        <div class="fc-value">4 July 2026 — Saturday</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Venue</div>
+                        <div class="fc-value">G.P. Slope Club House, Kadma</div>
+                    </div>
+                    <div class="fc-divider"></div>
+                    <div class="fc-item">
+                        <div class="fc-label">Description</div>
+                        <div class="fc-value">Pre-Wedding Ritual — Earth &amp; Water Worship</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Occasion</div>
+                        <div class="fc-value">🌅 Auspicious Beginning</div>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge img">🖼 Image Prompt</span><span>Paste into Midjourney
+                            / DALL-E 3</span></div>
+                    <div class="prompt-box" id="img2">Indian wedding invitation digital illustration. Portrait 9:16,
+                        1080x1920px. Background: warm cream textured paper (#F5F0E8). Bottom 45% of frame: A groom
+                        viewed from behind in a simple cream kurta-pyjama with a thin gold border, seated cross-legged
+                        on a decorated wooden paat (low stool) in a courtyard, surrounded by elder male relatives
+                        performing the Matkor (earth and water worship) ritual — a brass kalash pot topped with mango
+                        leaves and a coconut, small earthen pots, turmeric, akshat (rice) and lit diyas on a brass
+                        thali. Mauli (red-gold) thread tied around the kalash. Banana leaf plates with ritual offerings
+                        nearby. Left side: large tropical banana leaf plants. Top of frame: very thin hanging cloth
+                        toran of mango leaves at the very top edge only. Top 55% of frame center: completely clean,
+                        empty cream background — NO text, NO decorations in this zone. Warm golden morning light, soft
+                        watercolor illustration, Indian pre-wedding Matkor ritual aesthetic, no text, no faces.
+                        <button class="copy-btn" onclick="copyText('img2', this)">COPY</button>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge ae">🎬 After Effects Prompt</span></div>
+                    <div class="prompt-box ae-style" id="ae2"><span class="ae-highlight">SCENE 2 — Shubh Matkor | After
+                            Effects Text Spec</span>
+                        Canvas: 1080 x 1920px | Duration: 10s | Safe Zone: Top 55% only (Y: 0 to 1056px)
+
+                        <span class="text-color">Layer 1 — Event Title</span>
+                        Text : "Shubh Matkor"
+                        Font : Great Vibes or Pinyon Script, 120px
+                        Color : #1B3A5A
+                        Position : X=540, Y=270 — centered
+                        Animation: Opacity 0→100% + Y from +25→0, Duration 0.8s, Delay 0s, Ease Out
+
+                        <span class="text-color">Layer 2 — Gold Divider</span>
+                        Text : "——— ✦ ———"
+                        Font : Cormorant Garamond, 30px
+                        Color : #C8A84B
+                        Position : X=540, Y=390 — centered
+                        Animation: Scale X 0→1 (horizontal wipe), Duration 0.5s, Delay 0.6s
+
+                        <span class="text-color">Layer 3 — Date</span>
+                        Text : "JULY | 04 | SAT"
+                        Font : Cormorant Garamond Bold, 52px, letter-spacing 6px
+                        Color : #2D1A0A
+                        Position : X=540, Y=490 — centered
+                        Animation: Opacity 0→100% + Scale 0.9→1.0, Duration 0.5s, Delay 0.9s
+
+                        <span class="text-color">Layer 4 — Venue</span>
+                        Text : "G.P. Slope Club House, Kadma"
+                        Font : Cormorant Garamond Italic, 34px
+                        Color : #4A2040
+                        Position : X=540, Y=570 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.2s
+
+                        <span class="text-color">Layer 5 — Subtitle</span>
+                        Text : "Earth & Water Worship Ritual"
+                        Font : Cormorant Garamond, 32px
+                        Color : #2D1A0A
+                        Position : X=540, Y=640 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.5s
+
+                        <span class="ae-highlight">RULES:</span>
+                        - All 5 layers fit comfortably between Y=200 and Y=700 — no crowding, no cutoff
+                        - All text centered, max width 900px
+                        - Nothing below Y=1056
+                    </div>
+                    <button class="copy-btn" onclick="copyText('ae2', this)">COPY</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══ SCENE 3 ══ -->
+        <div class="scene-card">
+            <div class="scene-header">
+                <div class="scene-number">3</div>
+                <div class="scene-title-block">
+                    <div class="scene-event">5 July 2026 — SUN Morning</div>
+                    <h3>Mehndi</h3>
+                </div>
+                <div class="scene-duration">⏱ ~10 seconds</div>
+            </div>
+            <div class="scene-body">
+
+                <div class="flashcard-label">Flashcard Text Information (what appears on screen)</div>
+                <div class="flashcard-info">
+                    <div class="fc-item">
+                        <div class="fc-label">Event Name</div>
+                        <div class="fc-value">Mehndi</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Date</div>
+                        <div class="fc-value">5 July 2026 — Sunday</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Venue</div>
+                        <div class="fc-value">G.P. Slope Club House, Kadma</div>
+                    </div>
+                    <div class="fc-divider"></div>
+                    <div class="fc-item">
+                        <div class="fc-label">Time</div>
+                        <div class="fc-value">Morning Ceremony</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Occasion</div>
+                        <div class="fc-value">🌿 Henna &amp; Festivity</div>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge img">🖼 Image Prompt</span></div>
+                    <div class="prompt-box" id="img3">Indian wedding invitation digital illustration. Portrait 9:16,
+                        1080x1920px. Background: warm cream textured paper (#F5F0E8). Bottom 45% of frame: Groom viewed
+                        from behind, seated on a decorated floor cushion in a bright cream-and-gold kurta, having a
+                        simple mehndi (henna) motif applied on the back of one hand by a mehndi artist as a
+                        light-hearted tradition. Beside him: colorful mehndi cones arranged in a row, marigold flower
+                        petals scattered on the floor, small brass diya oil lamps glowing warm orange. Background:
+                        floral arch of marigolds, orange roses framing the scene. Right side: decorative hanging toran
+                        of mango leaves and marigold strings. Left side: hanging decorative peacock feather bundles. Top
+                        55% of frame center: completely clean empty cream background — NO decorations, NO text here.
+                        Soft warm morning light, festive watercolor illustration, Indian Mehndi ceremony aesthetic, no
+                        text, no faces.
+                        <button class="copy-btn" onclick="copyText('img3', this)">COPY</button>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge ae">🎬 After Effects Prompt</span></div>
+                    <div class="prompt-box ae-style" id="ae3"><span class="ae-highlight">SCENE 3 — Mehndi | After
+                            Effects Text Spec</span>
+                        Canvas: 1080 x 1920px | Duration: 10s | Safe Zone: Top 55% only (Y: 0 to 1056px)
+
+                        <span class="text-color">Layer 1 — Event Title</span>
+                        Text : "Mehndi"
+                        Font : Great Vibes or Pinyon Script, 140px
+                        Color : #1B3A5A
+                        Position : X=540, Y=280 — centered
+                        Animation: Scale 0.7→1.0 + Opacity 0→100%, Duration 0.7s, Delay 0s, Ease Out
+
+                        <span class="text-color">Layer 2 — Gold Divider</span>
+                        Text : "——— ✦ ———"
+                        Font : Cormorant Garamond, 30px
+                        Color : #C8A84B
+                        Position : X=540, Y=400 — centered
+                        Animation: Scale X 0→1 wipe reveal, Duration 0.5s, Delay 0.6s
+
+                        <span class="text-color">Layer 3 — Date</span>
+                        Text : "JULY | 05 | SUN"
+                        Font : Cormorant Garamond Bold, 52px, letter-spacing 6px
+                        Color : #2D1A0A
+                        Position : X=540, Y=495 — centered
+                        Animation: Opacity 0→100% + Scale 0.9→1.0, Duration 0.5s, Delay 0.9s
+
+                        <span class="text-color">Layer 4 — Venue</span>
+                        Text : "G.P. Slope Club House, Kadma"
+                        Font : Cormorant Garamond Italic, 34px
+                        Color : #4A2040
+                        Position : X=540, Y=575 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.2s
+
+                        <span class="text-color">Layer 5 — Time</span>
+                        Text : "Morning Ceremony"
+                        Font : Cormorant Garamond, 32px
+                        Color : #2D1A0A
+                        Position : X=540, Y=645 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.5s
+
+                        <span class="ae-highlight">RULES:</span>
+                        - All 5 layers between Y=200 and Y=700, centered, max width 900px
+                        - Nothing below Y=1056
+                    </div>
+                    <button class="copy-btn" onclick="copyText('ae3', this)">COPY</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══ SCENE 4 ══ -->
+        <div class="scene-card">
+            <div class="scene-header">
+                <div class="scene-number">4</div>
+                <div class="scene-title-block">
+                    <div class="scene-event">5 July 2026 — SUN Evening</div>
+                    <h3>Engagement &amp; Sangeet</h3>
+                </div>
+                <div class="scene-duration">⏱ ~10 seconds</div>
+            </div>
+            <div class="scene-body">
+
+                <div class="flashcard-label">Flashcard Text Information (what appears on screen)</div>
+                <div class="flashcard-info">
+                    <div class="fc-item">
+                        <div class="fc-label">Event Name</div>
+                        <div class="fc-value">Sagai &amp; Sangeet</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Date</div>
+                        <div class="fc-value">5 July 2026 — Sunday</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Venue</div>
+                        <div class="fc-value">G.P. Slope Club House, Kadma</div>
+                    </div>
+                    <div class="fc-divider"></div>
+                    <div class="fc-item">
+                        <div class="fc-label">Occasion</div>
+                        <div class="fc-value">💍 Ring Exchange &amp; Musical Night</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Vibe</div>
+                        <div class="fc-value">Festive, Joyful &amp; Celebratory</div>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge img">🖼 Image Prompt</span></div>
+                    <div class="prompt-box" id="img4">Indian wedding invitation digital illustration. Portrait 9:16,
+                        1080x1920px. Background: warm cream textured paper (#F5F0E8). Bottom 45% of frame: Groom
+                        celebrating at Sangeet — viewed from behind, wearing a sharp navy-and-gold bandhgala jacket,
+                        standing joyfully at the entrance of a white ornate gazebo decorated with warm string lights and
+                        pale gold drapes. An engagement ring box rests on a decorated table nearby. Colorful confetti
+                        and ribbon streamers flying through the air. Brass kalash pots and marigold arrangements at
+                        ground level. Male relatives in festive kurtas dancing in the background (silhouettes only). Top
+                        of frame: string of warm Edison bulb fairy lights draped in a V-shape across the top edge only.
+                        Upper corners: large marigold flower balls. Top 55% of frame center: completely clean empty
+                        cream background — NO text, NO decorations in this zone. Festive Sangeet party vibes — navy,
+                        gold, warm amber, celebratory. Watercolor digital illustration, no text, no faces.
+                        <button class="copy-btn" onclick="copyText('img4', this)">COPY</button>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge ae">🎬 After Effects Prompt</span></div>
+                    <div class="prompt-box ae-style" id="ae4"><span class="ae-highlight">SCENE 4 — Engagement &amp;
+                            Sangeet | After Effects Text Spec</span>
+                        Canvas: 1080 x 1920px | Duration: 10s | Safe Zone: Top 55% only (Y: 0 to 1056px)
+
+                        <span class="text-color">Layer 1 — Event Title Line 1</span>
+                        Text : "Sagai"
+                        Font : Great Vibes or Pinyon Script, 110px
+                        Color : #1B3A5A
+                        Position : X=540, Y=250 — centered
+                        Animation: X from -40→0 + Opacity 0→100%, Duration 0.7s, Delay 0s, Ease Out
+
+                        <span class="text-color">Layer 2 — Event Title Line 2</span>
+                        Text : "& Sangeet"
+                        Font : Great Vibes or Pinyon Script, 110px
+                        Color : #1B3A5A
+                        Position : X=540, Y=360 — centered
+                        Animation: X from +40→0 + Opacity 0→100%, Duration 0.7s, Delay 0.2s, Ease Out
+
+                        <span class="text-color">Layer 3 — Gold Divider</span>
+                        Text : "——— ✦ ———"
+                        Font : Cormorant Garamond, 30px
+                        Color : #C8A84B
+                        Position : X=540, Y=460 — centered
+                        Animation: Scale X 0→1 wipe reveal, Duration 0.5s, Delay 0.7s
+
+                        <span class="text-color">Layer 4 — Date</span>
+                        Text : "JULY | 05 | SUN"
+                        Font : Cormorant Garamond Bold, 52px, letter-spacing 6px
+                        Color : #2D1A0A
+                        Position : X=540, Y=555 — centered
+                        Animation: Opacity 0→100% + Scale 0.95→1.0, Duration 0.5s, Delay 1.0s
+
+                        <span class="text-color">Layer 5 — Venue</span>
+                        Text : "G.P. Slope Club House, Kadma"
+                        Font : Cormorant Garamond Italic, 32px
+                        Color : #4A2040
+                        Position : X=540, Y=635 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.3s
+
+                        <span class="text-color">Layer 6 — Subtitle</span>
+                        Text : "Ring Exchange & Musical Night"
+                        Font : Cormorant Garamond, 32px
+                        Color : #2D1A0A
+                        Position : X=540, Y=703 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.6s
+
+                        <span class="ae-highlight">RULES:</span>
+                        - Do NOT use pale blue text — too close to the bandhgala illustration color
+                        - All 6 layers between Y=200 and Y=760, centered, max width 900px
+                        - Nothing below Y=1056
+                    </div>
+                    <button class="copy-btn" onclick="copyText('ae4', this)">COPY</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══ SCENE 5 ══ -->
+        <div class="scene-card">
+            <div class="scene-header">
+                <div class="scene-number">5</div>
+                <div class="scene-title-block">
+                    <div class="scene-event">6 July 2026 — MON Morning</div>
+                    <h3>Haldi Kalash &amp; Satyanarayan Katha</h3>
+                </div>
+                <div class="scene-duration">⏱ ~10 seconds</div>
+            </div>
+            <div class="scene-body">
+
+                <div class="flashcard-label">Flashcard Text Information (what appears on screen)</div>
+                <div class="flashcard-info">
+                    <div class="fc-item">
+                        <div class="fc-label">Event Name</div>
+                        <div class="fc-value">Haldi Kalash</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Sub-Event</div>
+                        <div class="fc-value">Satyanarayan Katha</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Date</div>
+                        <div class="fc-value">6 July 2026 — Monday</div>
+                    </div>
+                    <div class="fc-divider"></div>
+                    <div class="fc-item">
+                        <div class="fc-label">Venue</div>
+                        <div class="fc-value">G.P. Slope Club House, Kadma</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Occasion</div>
+                        <div class="fc-value">🌼 Turmeric Blessing &amp; Sacred Katha</div>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge img">🖼 Image Prompt</span></div>
+                    <div class="prompt-box" id="img5">Indian wedding invitation digital illustration. Portrait 9:16,
+                        1080x1920px. Background: warm cream textured paper (#F5F0E8). Bottom 45% of frame: Groom viewed
+                        from behind, seated on a low decorated wooden paat in a bright yellow cotton kurta, having haldi
+                        (turmeric paste) applied on his arms and shoulders by male relatives using mango leaves, beside
+                        a brass kalash pot topped with a coconut and mango leaves (Haldi Kalash). A large brass thali
+                        filled with turmeric, kumkum, and marigold flowers in the foreground. An open Satyanarayan Katha
+                        book and a small puja setup with incense nearby. Banana leaf plates with fresh flower offerings
+                        beside him. Left side: large tropical banana leaf plants. Right side: decorative brass kalash
+                        pots with coconut tops. Top of frame: hanging marigold garland strings across the very top edge
+                        only. Top 55% of frame center: completely clean empty cream background — NO text, NO decorations
+                        in this zone. Warm golden haldi yellow vibes — sunshine and saffron palette. Soft watercolor
+                        illustration, sacred morning ritual atmosphere, no text, no faces.
+                        <button class="copy-btn" onclick="copyText('img5', this)">COPY</button>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge ae">🎬 After Effects Prompt</span></div>
+                    <div class="prompt-box ae-style" id="ae5"><span class="ae-highlight">SCENE 5 — Haldi Kalash &
+                            Satyanarayan Katha | After Effects Text Spec</span>
+                        Canvas: 1080 x 1920px | Duration: 10s | Safe Zone: Top 55% only (Y: 0 to 1056px)
+
+                        <span class="text-color">Layer 1 — Event Title</span>
+                        Text : "Haldi Kalash"
+                        Font : Great Vibes or Pinyon Script, 110px
+                        Color : #1B3A5A
+                        Position : X=540, Y=240 — centered
+                        Animation: Y from +25→0 + Opacity 0→100%, Duration 0.8s, Delay 0s, Ease Out
+
+                        <span class="text-color">Layer 2 — Event Title Line 2</span>
+                        Text : "& Satyanarayan Katha"
+                        Font : Cormorant Garamond Bold Italic, 42px
+                        Color : #4A2040
+                        Position : X=540, Y=345 — centered
+                        Animation: Opacity 0→100%, Duration 0.6s, Delay 0.5s
+
+                        <span class="text-color">Layer 3 — Gold Divider</span>
+                        Text : "——— ✦ ———"
+                        Font : Cormorant Garamond, 30px
+                        Color : #C8A84B
+                        Position : X=540, Y=420 — centered
+                        Animation: Scale X 0→1 wipe reveal, Duration 0.5s, Delay 0.9s
+
+                        <span class="text-color">Layer 4 — Date</span>
+                        Text : "JULY | 06 | MON"
+                        Font : Cormorant Garamond Bold, 52px, letter-spacing 6px
+                        Color : #2D1A0A
+                        Position : X=540, Y=515 — centered
+                        Animation: Opacity 0→100% + Scale 0.95→1.0, Duration 0.5s, Delay 1.1s
+
+                        <span class="text-color">Layer 5 — Venue</span>
+                        Text : "G.P. Slope Club House, Kadma"
+                        Font : Cormorant Garamond Italic, 32px
+                        Color : #4A2040
+                        Position : X=540, Y=595 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.4s
+
+                        <span class="ae-highlight">RULES:</span>
+                        - Do NOT use yellow text — blends with haldi/gold tones in illustration
+                        - All 5 layers between Y=180 and Y=660, centered, max width 900px
+                        - Nothing below Y=1056
+                    </div>
+                    <button class="copy-btn" onclick="copyText('ae5', this)">COPY</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══ SCENE 6 ══ -->
+        <div class="scene-card">
+            <div class="scene-header">
+                <div class="scene-number">6</div>
+                <div class="scene-title-block">
+                    <div class="scene-event">6 July 2026 — MON Midday</div>
+                    <h3>Mandap &amp; Devpujan</h3>
+                </div>
+                <div class="scene-duration">⏱ ~10 seconds</div>
+            </div>
+            <div class="scene-body">
+
+                <div class="flashcard-label">Flashcard Text Information (what appears on screen)</div>
+                <div class="flashcard-info">
+                    <div class="fc-item">
+                        <div class="fc-label">Event Name</div>
+                        <div class="fc-value">Mandap &amp; Devpujan</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Date</div>
+                        <div class="fc-value">6 July 2026 — Monday</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Venue</div>
+                        <div class="fc-value">G.P. Slope Club House, Kadma</div>
+                    </div>
+                    <div class="fc-divider"></div>
+                    <div class="fc-item">
+                        <div class="fc-label">Time</div>
+                        <div class="fc-value">Midday Ritual</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Occasion</div>
+                        <div class="fc-value">🪔 Sacred Mandap Consecration</div>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge img">🖼 Image Prompt</span></div>
+                    <div class="prompt-box" id="img6">Indian wedding invitation digital illustration. Portrait 9:16,
+                        1080x1920px. Background: warm cream textured paper (#F5F0E8). Bottom 45% of frame: Groom viewed
+                        from behind in a traditional cream-and-maroon silk kurta, seated cross-legged in front of a
+                        grand newly constructed wedding mandap. The mandap has ornate dark wooden carved pillars
+                        decorated with mango leaf torans, marigold garland strings, and hanging brass diyas. In the
+                        center foreground: a havan kund (sacred fire pit) with gentle flames, surrounded by brass puja
+                        thali, flowers, rice grains, and incense sticks. A Brahmin pandit silhouette performing
+                        devpujan. Nearby: brass kalash pots, banana leaf plates with ritual offerings, red mauli thread.
+                        Left side: lush tropical banana leaf plants. Right side: tall marigold flower arrangement. Top
+                        of frame: orange and red hanging cloth toran border across the very top edge only. Top 55% of
+                        frame center: completely clean empty cream background — NO text, NO decoration in this zone.
+                        Sacred, devotional, pre-wedding mandap atmosphere. Soft midday light watercolor illustration. No
+                        text anywhere, no clear faces.
+                        <button class="copy-btn" onclick="copyText('img6', this)">COPY</button>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge ae">🎬 After Effects Prompt</span></div>
+                    <div class="prompt-box ae-style" id="ae6"><span class="ae-highlight">SCENE 6 — Mandap & Devpujan |
+                            After Effects Text Spec</span>
+                        Canvas: 1080 x 1920px | Duration: 10s | Safe Zone: Top 55% only (Y: 0 to 1056px)
+
+                        <span class="text-color">Layer 1 — Event Title</span>
+                        Text : "Mandap & Devpujan"
+                        Font : Great Vibes or Pinyon Script, 100px
+                        Color : #1B3A5A
+                        Position : X=540, Y=260 — centered, max width 900px
+                        Animation: Y from +25→0 + Opacity 0→100%, Duration 0.8s, Delay 0s, Ease Out
+
+                        <span class="text-color">Layer 2 — Gold Divider</span>
+                        Text : "——— ✦ ———"
+                        Font : Cormorant Garamond, 30px
+                        Color : #C8A84B
+                        Position : X=540, Y=420 — centered
+                        Animation: Scale X 0→1 wipe reveal, Duration 0.5s, Delay 0.9s
+
+                        <span class="text-color">Layer 3 — Date</span>
+                        Text : "JULY | 06 | MON"
+                        Font : Cormorant Garamond Bold, 52px, letter-spacing 6px
+                        Color : #2D1A0A
+                        Position : X=540, Y=515 — centered
+                        Animation: Opacity 0→100% + Scale 0.95→1.0, Duration 0.5s, Delay 1.1s
+
+                        <span class="text-color">Layer 4 — Venue</span>
+                        Text : "G.P. Slope Club House, Kadma"
+                        Font : Cormorant Garamond Italic, 32px
+                        Color : #4A2040
+                        Position : X=540, Y=595 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.4s
+
+                        <span class="text-color">Layer 5 — Subtitle</span>
+                        Text : "Sacred Mandap Consecration"
+                        Font : Cormorant Garamond, 32px
+                        Color : #2D1A0A
+                        Position : X=540, Y=660 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.7s
+
+                        <span class="ae-highlight">RULES:</span>
+                        - This is a devotional scene — keep animations gentle, no bouncy effects
+                        - All 5 layers between Y=180 and Y=720, centered, max width 900px
+                        - Nothing below Y=1056
+                    </div>
+                    <button class="copy-btn" onclick="copyText('ae6', this)">COPY</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══ SCENE 7 ══ -->
+        <div class="scene-card">
+            <div class="scene-header">
+                <div class="scene-number">7</div>
+                <div class="scene-title-block">
+                    <div class="scene-event">6 July 2026 — MON 6:00 PM</div>
+                    <h3>Baraat Departure 🚩</h3>
+                </div>
+                <div class="scene-duration">⏱ ~12 seconds</div>
+            </div>
+            <div class="scene-body">
+
+                <div class="flashcard-label">Flashcard Text Information (what appears on screen)</div>
+                <div class="flashcard-info">
+                    <div class="fc-item">
+                        <div class="fc-label">Event Name</div>
+                        <div class="fc-value">Baraat</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Date &amp; Time</div>
+                        <div class="fc-value">6 July 2026 — Monday, 6:00 PM</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Departs From</div>
+                        <div class="fc-value">Peepaldhari Shiv Hanuman Mandir, Shastrinagar Block No. 3, Kadma</div>
+                    </div>
+                    <div class="fc-divider"></div>
+                    <div class="fc-item">
+                        <div class="fc-label">Arrives At</div>
+                        <div class="fc-value">Khalsa Club, Bistupur, Jamshedpur</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Occasion</div>
+                        <div class="fc-value">🎺 The Groom's Procession Begins</div>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge img">🖼 Image Prompt</span></div>
+                    <div class="prompt-box" id="img7">Indian wedding invitation digital illustration. Portrait 9:16,
+                        1080x1920px. Background: warm cream textured paper (#F5F0E8). Bottom 45% of frame: Groom in an
+                        ivory-white sherwani with gold embroidery and a maroon-gold safa turban with sehra, viewed from
+                        behind, mounted on a decorated white horse (ghodi) draped in marigold garlands and gold
+                        embroidered cloth, departing from a small temple gateway with a peeplal tree silhouette and a
+                        Hanuman flag fluttering above. Brass band silhouettes and dhol drums in the background. Rose
+                        petals and marigold petals scattered in the air. String lights and a decorative entrance arch
+                        with marigold garlands framing the temple gate. Left side: tall brass oil lamp on a stand. Right
+                        side: dense lush tropical banana leaf plants. Top of frame border: orange and red hanging toran
+                        fabric strip at the very top edge only. Top 55% of frame center: completely clean empty cream
+                        background — NO text, NO decorations. Festive procession energy, golden hour light, watercolor
+                        illustration, no text, no clear faces.
+                        <button class="copy-btn" onclick="copyText('img7', this)">COPY</button>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge ae">🎬 After Effects Prompt</span></div>
+                    <div class="prompt-box ae-style" id="ae7"><span class="ae-highlight">SCENE 7 — Baraat Departure |
+                            After Effects Text Spec</span>
+                        Canvas: 1080 x 1920px | Duration: 12s | Safe Zone: Top 55% only (Y: 0 to 1056px)
+
+                        <span class="text-color">Layer 1 — Main Event Title</span>
+                        Text : "Baraat"
+                        Font : Great Vibes or Pinyon Script, 130px
+                        Color : #1B3A5A
+                        Position : X=540, Y=210 — centered
+                        Animation: Scale 0.6→1.0 + Opacity 0→100%, Duration 1.0s, Delay 0s, Ease Out Expo — grand reveal
+
+                        <span class="text-color">Layer 2 — Gold Ornamental Divider</span>
+                        Text : "❧ ——— ✦ ——— ❧"
+                        Font : Cormorant Garamond, 30px
+                        Color : #C8A84B
+                        Position : X=540, Y=330 — centered
+                        Animation: Scale X 0→1 wipe reveal + Opacity 0→100%, Duration 0.6s, Delay 0.9s
+
+                        <span class="text-color">Layer 3 — Date & Time</span>
+                        Text : "JULY 06 | MON | 6:00 PM"
+                        Font : Cormorant Garamond Bold, 46px, letter-spacing 4px
+                        Color : #2D1A0A
+                        Position : X=540, Y=430 — centered
+                        Animation: Opacity 0→100% + Scale 0.95→1.0, Duration 0.5s, Delay 1.2s
+
+                        <span class="text-color">Layer 4 — Departs From Label</span>
+                        Text : "Departs From"
+                        Font : Cormorant Garamond Italic, 30px
+                        Color : #C8A84B
+                        Position : X=540, Y=520 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.5s
+
+                        <span class="text-color">Layer 5 — Departure Venue (main focus)</span>
+                        Text : "Peepaldhari Shiv Hanuman Mandir"
+                        Font : Cormorant Garamond Bold, 38px
+                        Color : #1B3A5A
+                        Position : X=540, Y=580 — centered, max width 880px
+                        Animation: Opacity 0→100% + Y from +15→0, Duration 0.6s, Delay 1.7s
+
+                        <span class="text-color">Layer 6 — Departure Address</span>
+                        Text : "Shastrinagar, Block No. 3, Kadma"
+                        Font : Cormorant Garamond, 30px
+                        Color : #4A2040
+                        Position : X=540, Y=635 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.9s
+
+                        <span class="text-color">Layer 7 — Arrow / Direction Cue</span>
+                        Text : "↓ proceeding to ↓"
+                        Font : Cormorant Garamond Italic, 26px
+                        Color : #C8A84B
+                        Position : X=540, Y=700 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 2.1s
+
+                        <span class="text-color">Layer 8 — Arrival Venue</span>
+                        Text : "Khalsa Club, Bistupur, Jamshedpur"
+                        Font : Cormorant Garamond Bold, 36px
+                        Color : #1B3A5A
+                        Position : X=540, Y=760 — centered, max width 880px
+                        Animation: Opacity 0→100% + Y from +15→0, Duration 0.6s, Delay 2.3s
+
+                        <span class="ae-highlight">RULES:</span>
+                        - This is the main route scene — use the grand Scale Ease Out Expo on the title for impact
+                        - All 8 layers between Y=160 and Y=820 — verify no overlap before rendering
+                        - All text centered, max width 900px. Nothing below Y=1056
+                    </div>
+                    <button class="copy-btn" onclick="copyText('ae7', this)">COPY</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══ SCENE 8 ══ -->
+        <div class="scene-card">
+            <div class="scene-header">
+                <div class="scene-number">8</div>
+                <div class="scene-title-block">
+                    <div class="scene-event">6 July 2026 — MON Night</div>
+                    <h3>Subh Vivah &amp; Preetibhoj 💍</h3>
+                </div>
+                <div class="scene-duration">⏱ ~12 seconds</div>
+            </div>
+            <div class="scene-body">
+
+                <div class="flashcard-label">Flashcard Text Information (what appears on screen)</div>
+                <div class="flashcard-info">
+                    <div class="fc-item">
+                        <div class="fc-label">Event Name</div>
+                        <div class="fc-value">Subh Vivah</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Date</div>
+                        <div class="fc-value">6 July 2026 — Monday, Night</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Venue</div>
+                        <div class="fc-value">Khalsa Club, Bistupur, Jamshedpur</div>
+                    </div>
+                    <div class="fc-divider"></div>
+                    <div class="fc-item">
+                        <div class="fc-label">Preetibhoj</div>
+                        <div class="fc-value">From 7:00 PM, same venue</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Groom</div>
+                        <div class="fc-value">Chi. Vishal Gupta</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Weds</div>
+                        <div class="fc-value">Ayu. Yashwani Gupta</div>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge img">🖼 Image Prompt</span></div>
+                    <div class="prompt-box" id="img8">Indian wedding invitation digital illustration. Portrait 9:16,
+                        1080x1920px. Background: warm cream textured paper (#F5F0E8). Bottom 45% of frame: Groom in an
+                        ivory-white sherwani with heavy gold embroidery and a maroon-gold safa turban, viewed from
+                        behind, standing tall at the entrance of a grand temple-style wedding mandap with ornate carved
+                        dark wood columns, hanging brass diya lamps, and marigold garland strings draped across. Bride
+                        in a red bridal lehenga with gold zari work visible beside groom. Inside the mandap: teal
+                        cushioned bench with colorful embroidered pillows. Sacred havan flames glowing golden in the
+                        center. Right foreground: tall brass oil lamp stand with flame. Left side: dense lush tropical
+                        banana leaf plants. Rose petals and flower confetti drifting through the air. Top of frame
+                        border: orange and red hanging toran fabric strip at the very top edge only. Top 55% of frame
+                        center: completely clean empty cream background — NO text, NO decorations. Grand royal Indian
+                        wedding aesthetic, high detail watercolor illustration, no text, no clear faces.
+                        <button class="copy-btn" onclick="copyText('img8', this)">COPY</button>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge ae">🎬 After Effects Prompt</span></div>
+                    <div class="prompt-box ae-style" id="ae8"><span class="ae-highlight">SCENE 8 — Subh Vivah &
+                            Preetibhoj | After Effects Text Spec</span>
+                        Canvas: 1080 x 1920px | Duration: 12s | Safe Zone: Top 55% only (Y: 0 to 1056px)
+
+                        <span class="text-color">Layer 1 — Main Event Title</span>
+                        Text : "Subh Vivah"
+                        Font : Great Vibes or Pinyon Script, 130px
+                        Color : #1B3A5A
+                        Position : X=540, Y=200 — centered
+                        Animation: Scale 0.6→1.0 + Opacity 0→100%, Duration 1.0s, Delay 0s, Ease Out Expo — grand reveal
+
+                        <span class="text-color">Layer 2 — Gold Ornamental Divider</span>
+                        Text : "❧ ——— ✦ ——— ❧"
+                        Font : Cormorant Garamond, 30px
+                        Color : #C8A84B
+                        Position : X=540, Y=320 — centered
+                        Animation: Scale X 0→1 wipe reveal + Opacity 0→100%, Duration 0.6s, Delay 0.9s
+
+                        <span class="text-color">Layer 3 — Date</span>
+                        Text : "JULY | 06 | MON | NIGHT"
+                        Font : Cormorant Garamond Bold, 44px, letter-spacing 4px
+                        Color : #2D1A0A
+                        Position : X=540, Y=420 — centered
+                        Animation: Opacity 0→100% + Scale 0.95→1.0, Duration 0.5s, Delay 1.2s
+
+                        <span class="text-color">Layer 4 — Groom Name (main focus)</span>
+                        Text : "Chi. Vishal Gupta"
+                        Font : Great Vibes, 90px, BOLD WEIGHT
+                        Color : #1B3A5A
+                        Position : X=540, Y=540 — centered
+                        Animation: Opacity 0→100% + Y from +15→0, Duration 0.6s, Delay 1.5s
+                        ★ Make this text BOLD — use Bold/Heavy variant of font
+
+                        <span class="text-color">Layer 5 — Weds Line</span>
+                        Text : "weds"
+                        Font : Cormorant Garamond Italic, 36px
+                        Color : #C8A84B
+                        Position : X=540, Y=640 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.7s
+
+                        <span class="text-color">Layer 6 — Bride Name</span>
+                        Text : "Ayu. Yashwani Gupta"
+                        Font : Great Vibes, 90px, BOLD WEIGHT
+                        Color : #7A1A3A
+                        Position : X=540, Y=740 — centered
+                        Animation: Opacity 0→100% + Y from +15→0, Duration 0.6s, Delay 1.9s
+                        ★ Make this text BOLD — use Bold/Heavy variant of font
+
+                        <span class="text-color">Layer 7 — Venue</span>
+                        Text : "Khalsa Club, Bistupur, Jamshedpur"
+                        Font : Cormorant Garamond Bold, 32px
+                        Color : #4A2040
+                        Position : X=540, Y=850 — centered, max width 860px
+                        Animation: Opacity 0→100%, Duration 0.5s, Delay 2.1s
+
+                        <span class="text-color">Layer 8 — Preetibhoj Note</span>
+                        Text : "Preetibhoj from 7:00 PM — same venue"
+                        Font : Cormorant Garamond Italic, 28px
+                        Color : #C8A84B
+                        Position : X=540, Y=905 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 2.4s
+
+                        <span class="ae-highlight">RULES:</span>
+                        - This is the main scene — use the grand Scale Ease Out Expo on the title for impact
+                        - All 8 layers between Y=160 and Y=940 — verify no overlap before rendering
+                        - All text centered, max width 900px. Nothing below Y=1056
+                    </div>
+                    <button class="copy-btn" onclick="copyText('ae8', this)">COPY</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══ SCENE 9 ══ -->
+        <div class="scene-card">
+            <div class="scene-header">
+                <div class="scene-number">9</div>
+                <div class="scene-title-block">
+                    <div class="scene-event">Closing Card</div>
+                    <h3>RSVP &amp; Family Names</h3>
+                </div>
+                <div class="scene-duration">⏱ ~8 seconds</div>
+            </div>
+            <div class="scene-body">
+
+                <div class="flashcard-label">Flashcard Text Information (what appears on screen)</div>
+                <div class="flashcard-info">
+                    <div class="fc-item">
+                        <div class="fc-label">Section Title</div>
+                        <div class="fc-value">Sharing the Joy</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Groom Family</div>
+                        <div class="fc-value">Gupta Parivar — Kadma, Jamshedpur</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Bride Family</div>
+                        <div class="fc-value">Gupta Parivar — Shahdol (M.P.)</div>
+                    </div>
+                    <div class="fc-divider"></div>
+                    <div class="fc-item">
+                        <div class="fc-label">Hosted By</div>
+                        <div class="fc-value">Shri Dhanji Sah (Dada)</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">RSVP Contact</div>
+                        <div class="fc-value">Shri Dhanji Sah — +91 99730 39894</div>
+                    </div>
+                    <div class="fc-item">
+                        <div class="fc-label">Alt. Contact</div>
+                        <div class="fc-value">+91 74886 02361</div>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge img">🖼 Image Prompt</span></div>
+                    <div class="prompt-box" id="img9">Indian wedding invitation background illustration. Portrait 9:16,
+                        1080x1920px. Completely clean, minimal design. Background: warm cream textured paper (#F5F0E8) —
+                        subtle linen/handmade paper texture throughout the entire frame. Top border only: hanging
+                        decorative toran — green leafy twig branches drooping from upper-left corner and upper-right
+                        corner, meeting gently at top center, adorned with small colorful pompom flowers (gold, maroon,
+                        orange) and tiny tassel bells hanging down. Upper corners: hanging decorative floral cluster /
+                        doli tassels — one on far left, one on far right. Bottom border: very thin subtle gold
+                        decorative line border at the very bottom edge only. Rest of the entire frame: completely plain
+                        cream textured background with NO people, NO mandap, NO couple. Just clean elegant textured
+                        paper with top toran decoration. No text anywhere.
+                        <button class="copy-btn" onclick="copyText('img9', this)">COPY</button>
+                    </div>
+                </div>
+
+                <div class="prompt-section">
+                    <div class="prompt-label"><span class="badge ae">🎬 After Effects Prompt</span></div>
+                    <div class="prompt-box ae-style" id="ae9"><span class="ae-highlight">SCENE 9 — RSVP / Closing Card |
+                            After Effects Text Spec</span>
+                        Canvas: 1080 x 1920px | Duration: 8s | Safe Zone: Full frame (Y: 200 to 1800px — no illustration
+                        here)
+
+                        <span class="text-color">Layer 1 — Section Title</span>
+                        Text : "Sharing the Joy"
+                        Font : Great Vibes or Pinyon Script, 90px
+                        Color : #1B3A5A
+                        Position : X=540, Y=340 — centered
+                        Animation: Y from +20→0 + Opacity 0→100%, Duration 0.6s, Delay 0s
+
+                        <span class="text-color">Layer 2 — Gold Divider</span>
+                        Text : "——— ✦ ———"
+                        Font : Cormorant Garamond, 30px
+                        Color : #C8A84B
+                        Position : X=540, Y=440 — centered
+                        Animation: Scale X 0→1 wipe reveal, Duration 0.5s, Delay 0.4s
+
+                        <span class="text-color">Layer 3 — Groom Family</span>
+                        Text : "Gupta Parivar — Kadma, Jamshedpur"
+                        Font : Cormorant Garamond Bold, 38px
+                        Color : #2D1A0A
+                        Position : X=540, Y=550 — centered
+                        Animation: Opacity 0→100%, Duration 0.5s, Delay 0.6s
+
+                        <span class="text-color">Layer 4 — Bride Family</span>
+                        Text : "Gupta Parivar — Shahdol (M.P.)"
+                        Font : Cormorant Garamond Bold, 38px
+                        Color : #2D1A0A
+                        Position : X=540, Y=610 — centered
+                        Animation: Opacity 0→100%, Duration 0.5s, Delay 0.8s
+
+                        <span class="text-color">Layer 5 — Hosted By Label</span>
+                        Text : "Hosted By"
+                        Font : Cormorant Garamond Italic, 30px
+                        Color : #C8A84B
+                        Position : X=540, Y=730 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.1s
+
+                        <span class="text-color">Layer 6 — Grandfather Name</span>
+                        Text : "Shri Dhanji Sah"
+                        Font : Cormorant Garamond Bold, 44px
+                        Color : #1B3A5A
+                        Position : X=540, Y=790 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.3s
+
+                        <span class="text-color">Layer 7 — RSVP Label</span>
+                        Text : "RSVP"
+                        Font : Cormorant Garamond Bold Italic, 56px
+                        Color : #1B3A5A
+                        Position : X=540, Y=910 — centered
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.6s
+
+                        <span class="text-color">Layer 8 — Contact Numbers</span>
+                        Text : "+91 99730 39894 | +91 74886 02361"
+                        Font : Cormorant Garamond, 32px
+                        Color : #2D1A0A
+                        Position : X=540, Y=985 — centered, max width 880px
+                        Animation: Opacity 0→100%, Duration 0.4s, Delay 1.8s
+
+                        <span class="ae-highlight">RULES:</span>
+                        - This scene uses the FULL frame height (no illustration) — text can go lower
+                        - No monogram on this closing card — RSVP block ends with the contact numbers only
+                        - All text centered, max width 900px. Nothing below Y=1056
+                        - Final fade-out: entire scene fades to 0 opacity at t=7.0s over 1.0s
+                    </div>
+                    <button class="copy-btn" onclick="copyText('ae9', this)">COPY</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- WORKFLOW BOX -->
+        <div class="style-guide" style="background:#0D0D1F;border-color:#2A2A4A;color:#DDD8C8;">
+            <h3 style="color:#E8A020;font-family:'Cormorant Garamond',serif;">🎬 After Effects Assembly Workflow</h3>
+            <div style="font-size:13.5px;line-height:2;color:#DDD8C8;">
+                <p style="margin-bottom:12px;"><strong style="color:#E8A020;">Step 1 — Create Composition:</strong> 1080
+                    × 1920px, 30fps, total duration ~90–100 seconds</p>
+                <p style="margin-bottom:12px;"><strong style="color:#E8A020;">Step 2 — Import All 9 Images:</strong>
+                    Each image as a layer, duration as specified per scene above</p>
+                <p style="margin-bottom:12px;"><strong style="color:#E8A020;">Step 3 — Transition Between
+                        Scenes:</strong> Soft cross-dissolve (opacity fade) of 0.8 seconds between every scene</p>
+                <p style="margin-bottom:12px;"><strong style="color:#E8A020;">Step 4 — Add Text Per Scene:</strong> Use
+                    text specs above. All text goes in the TOP 55% of each frame (except Scene 9 which uses full frame)
+                </p>
+                <p style="margin-bottom:12px;"><strong style="color:#E8A020;">Step 5 — Text Color Rule:</strong> ALWAYS
+                    use #1B3A5A (deep navy) or #2D1A0A (dark brown) for text. NEVER use cream, white, or light colors —
+                    they will be invisible on the cream background.</p>
+                <p style="margin-bottom:12px;"><strong style="color:#E8A020;">Step 6 — Font Install Required:</strong>
+                    Install "Great Vibes" and "Cormorant Garamond" fonts before opening AE. Download free from Google
+                    Fonts.</p>
+                <p style="margin-bottom:12px;"><strong style="color:#E8A020;">Step 7 — Audio:</strong> Add Indian
+                    classical / Shehnai BGM or soft folk music. Keep at 20% volume under full mix. Fade out last 3
+                    seconds.</p>
+                <p><strong style="color:#E8A020;">Step 8 — Export:</strong> H.264, MP4, 1080×1920, 30fps, High Quality
+                    preset</p>
+            </div>
+        </div>
+
+    </div><!-- end container -->
+
+    <footer>
+        <strong>Vishal &amp; Yashwani Wedding — Boys' Side — 4–6 July 2026</strong><br>
+        Complete Video Production Guide &nbsp;|&nbsp; All Image Prompts + After Effects Text Specs<br>
+        <span style="font-size:11px;color:#B0A090;margin-top:6px;display:block;">RSVP: Shri Dhanji Sah +91 99730 39894
+            &nbsp;|&nbsp; +91 74886 02361</span>
+    </footer>
+
+    <script>
+        function copyText(id, btn) {
+            const el = document.getElementById(id);
+            const text = el.innerText.replace(/COPY\s*$/, '').trim();
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = 'COPIED ✓';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'COPY';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(() => {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                btn.textContent = 'COPIED ✓';
+                btn.classList.add('copied');
+                setTimeout(() => { btn.textContent = 'COPY'; btn.classList.remove('copied'); }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>

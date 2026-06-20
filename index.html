@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>यशवनी ❀ विशाल — शुभ विवाह निमंत्रण</title>
+  <meta name="description"
+    content="यशवनी गुप्ता एवं विशाल गुप्ता के शुभ विवाह में आपका हार्दिक स्वागत है — 06 जुलाई 2026">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Great+Vibes&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Yatra+One&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #D4AF37;
+      /* Metallic Royal Gold */
+      --gold-light: #E8D5A0;
+      --maroon: #58111A;
+      /* Deep Luxury Maroon */
+      --cream: #FDFBF7;
+      --cream-dark: #F6EFE2;
+      --dark: #130304;
+      /* Deep Velvet Burgundy */
+      --text-dark: #2C1810;
+      --glass-bg: rgba(255, 255, 255, 0.55);
+      --glass-border: rgba(212, 175, 55, 0.25);
+      --shadow-gold: 0 16px 40px rgba(88, 17, 26, 0.08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Tiro Devanagari Hindi', 'Noto Sans Devanagari', serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Typography Utilities */
+    .font-title-hi {
+      font-family: 'Yatra One', cursive;
+      font-weight: 400;
+    }
+
+    .font-title-en {
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .font-script {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .font-body-hi {
+      font-family: 'Tiro Devanagari Hindi', serif;
+    }
+
+    .font-body-en {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+
+    /* ── PETAL CANVAS ── */
+    #petalCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 99;
+      opacity: 0.85;
+    }
+
+    /* ── MUSIC BTN ── */
+    .music-player-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 2px solid var(--gold);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+      transition: all 0.3s ease;
+      color: var(--maroon);
+      font-size: 1.2rem;
+    }
+
+    .music-player-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 36px rgba(212, 175, 55, 0.5);
+    }
+
+    .music-player-btn.playing {
+      animation: rotateVinyl 4s linear infinite;
+    }
+
+    /* ── COVER ── */
+    #cover {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background-color: var(--dark);
+    }
+
+    .cover-bg {
+      position: absolute;
+      inset: 0;
+      background: url('pre_wedding_1.png') no-repeat center center;
+      background-size: cover;
+      transform: scale(1.05);
+      animation: bgZoom 15s ease-out infinite alternate;
+    }
+
+    .cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(19, 3, 4, 0.4) 0%,
+          rgba(19, 3, 4, 0.3) 40%,
+          rgba(19, 3, 4, 0.75) 75%,
+          rgba(19, 3, 4, 0.96) 100%);
+    }
+
+    .cover-content {
+      position: relative;
+      z-index: 2;
+      padding: 2.5rem;
+      max-width: 650px;
+      animation: fadeUp 1.5s ease both;
+    }
+
+    .ganesh-text {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 1.15rem;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .cover-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 7px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+    }
+
+    .cover-names {
+      font-family: 'Yatra One', cursive;
+      font-size: clamp(3.2rem, 9vw, 5.5rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    .cover-names .amp {
+      display: block;
+      font-family: 'Great Vibes', cursive;
+      color: var(--gold);
+      font-size: 0.55em;
+      margin: 0.1em 0;
+      text-shadow: none;
+    }
+
+    .cover-date {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.75rem, 2vw, 0.9rem);
+      letter-spacing: 4px;
+      color: var(--gold-light);
+      margin-top: 1.8rem;
+      line-height: 1.6;
+    }
+
+    .cover-divider {
+      color: var(--gold);
+      margin: 1.2rem 0;
+      font-size: 1.2rem;
+    }
+
+    .scroll-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.95rem 2.8rem;
+      border: 1.5px solid var(--gold);
+      color: var(--gold-light);
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: rgba(19, 3, 4, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 4px;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .scroll-btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* ── STICKY NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(253, 251, 247, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0.8rem 1rem;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 24px rgba(88, 17, 26, 0.04);
+    }
+
+    nav a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      padding: 0.2rem 0;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 1.5px;
+      background: var(--maroon);
+      transition: width 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav a:hover {
+      color: var(--maroon);
+    }
+
+    nav a:hover::after {
+      width: 80%;
+    }
+
+    .nav-heart {
+      color: var(--gold);
+      font-size: 0.8rem;
+    }
+
+    /* ── SECTION BASE ── */
+    .section {
+      padding: 6.5rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .sec-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .sec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.3rem, 6.5vw, 4rem);
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+    }
+
+    .sec-title em {
+      color: var(--maroon);
+      font-family: 'Great Vibes', cursive;
+      font-style: normal;
+      font-size: 1.1em;
+      margin-left: 0.3rem;
+    }
+
+    .thin-line {
+      width: 70px;
+      height: 1.5px;
+      background: var(--gold);
+      margin: 1.2rem auto;
+    }
+
+    .sec-body {
+      font-size: 0.95rem;
+      line-height: 2;
+      color: #5A3E2B;
+      max-width: 580px;
+      margin: 0 auto;
+      font-family: 'Tiro Devanagari Hindi', serif;
+    }
+
+    /* ── SAVE DATE / COUNTDOWN ── */
+    #save-the-date {
+      background: var(--cream);
+    }
+
+    .date-glass-box {
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 24px;
+      display: inline-block;
+      padding: 2.5rem 4rem;
+      margin: 2rem 0;
+      position: relative;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .date-glass-box::before,
+    .date-glass-box::after {
+      content: '✦';
+      position: absolute;
+      color: var(--gold);
+      font-size: 1.1rem;
+      background: var(--cream);
+      padding: 0 0.6rem;
+    }
+
+    .date-glass-box::before {
+      top: -0.65rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .date-glass-box::after {
+      bottom: -0.65rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .date-num {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3.2rem, 11vw, 5.8rem);
+      color: var(--maroon);
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .date-mo {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: 3px;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    .cd-unit {
+      text-align: center;
+    }
+
+    .cd-box {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 16px;
+      padding: 1.2rem;
+      min-width: 90px;
+      box-shadow: 0 8px 32px rgba(88, 17, 26, 0.03);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cd-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(212, 175, 55, 0.25);
+    }
+
+    .cd-num {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.2rem, 6.5vw, 3.2rem);
+      color: var(--maroon);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .cd-lbl {
+      font-size: 0.62rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+
+    /* ── 3D FLASHCARD EVENT DECK ── */
+    #events {
+      background-color: var(--cream-dark);
+    }
+
+    .deck-container {
+      position: relative;
+      width: 300px;
+      height: 533px;
+      /* 9:16 aspect ratio */
+      margin: 3.5rem auto 0;
+      perspective: 1200px;
+    }
+
+    @media (max-width: 480px) {
+      .deck-container {
+        width: 260px;
+        height: 462px;
+        /* 9:16 aspect ratio */
+      }
+    }
+
+    .deck-card {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: var(--cream-dark);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 20px;
+      box-shadow: 0 20px 48px rgba(44, 24, 16, 0.08);
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s, z-index 0.6s;
+      transform-style: preserve-3d;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .deck-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* ensures complete image is visible without any cropping */
+      border-radius: 20px;
+      transition: transform 0.5s ease;
+      background-color: var(--cream-dark);
+    }
+
+    .deck-card:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Event details card below the deck controls */
+    .details-card-wrapper {
+      max-width: 400px;
+      margin: 2.2rem auto 0;
+      padding: 0 1rem;
+    }
+
+    .active-event-details-card {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 20px;
+      padding: 1.5rem 1.8rem;
+      text-align: left;
+      box-shadow: var(--shadow-gold);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+
+    .active-event-details-card::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px dashed rgba(212, 175, 55, 0.35);
+      border-radius: 14px;
+      pointer-events: none;
+    }
+
+    .deck-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+    }
+
+    .event-icon {
+      font-size: 2rem;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    }
+
+    .event-badge {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .event-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    .event-name-hi {
+      font-family: 'Yatra One', cursive;
+      font-size: 1.45rem;
+      color: var(--maroon);
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .event-date {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .event-venue {
+      font-size: 0.82rem;
+      color: #8b6040;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .event-venue::before {
+      content: '📍';
+    }
+
+    .deck-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .deck-btn {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
+      border: 1px solid var(--gold);
+      color: var(--maroon);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .deck-btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+      transform: scale(1.08);
+    }
+
+    .deck-btn:active {
+      transform: scale(0.95);
+    }
+
+    .deck-indicator {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ── PRE-WEDDING GALLERY STACK ── */
+    #gallery {
+      background: var(--cream);
+    }
+
+    .gallery-container {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      height: 460px;
+      margin: 3.5rem auto 0;
+      perspective: 1200px;
+    }
+
+    .gallery-card {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: #FFF;
+      border: 6px solid #FFF;
+      border-radius: 20px;
+      box-shadow: 0 16px 40px rgba(44, 24, 16, 0.12);
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s, z-index 0.6s;
+      overflow: hidden;
+      cursor: pointer;
+      transform-style: preserve-3d;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 2.2rem 1.2rem 1.2rem;
+      background: linear-gradient(to top, rgba(19, 3, 4, 0.92) 0%, rgba(19, 3, 4, 0.5) 60%, transparent 100%);
+      color: var(--gold-light);
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+    }
+
+    /* ── FAMILY ── */
+    #family {
+      background: var(--cream-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .family-watermark {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(280px, 40vw, 420px);
+      height: auto;
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .family-decor-img {
+      width: 110px;
+      height: auto;
+      margin: 0.8rem auto 1.5rem;
+      display: block;
+      opacity: 0.85;
+      filter: drop-shadow(0 4px 8px rgba(88, 17, 26, 0.08));
+      position: relative;
+      z-index: 1;
+    }
+
+    .family-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 2.5rem;
+      max-width: 950px;
+      margin: 3rem auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .family-side {
+      text-align: left;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(212, 175, 55, 0.35);
+      border-radius: 20px;
+      padding: 2.5rem 2.2rem;
+      box-shadow: 0 16px 40px rgba(88, 17, 26, 0.06);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+    }
+
+    .family-side::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px dashed rgba(212, 175, 55, 0.3);
+      border-radius: 14px;
+      pointer-events: none;
+    }
+
+    .family-side:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 50px rgba(88, 17, 26, 0.12), 0 0 20px rgba(212, 175, 55, 0.15);
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .family-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .family-name-hi {
+      font-family: 'Yatra One', cursive;
+      font-size: 1.75rem;
+      color: var(--maroon);
+      font-weight: 400;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .family-info {
+      font-size: 0.9rem;
+      line-height: 2;
+      color: var(--text-dark);
+      margin-top: 1rem;
+      font-family: 'Tiro Devanagari Hindi', serif;
+    }
+
+    .family-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.6rem;
+      position: relative;
+    }
+
+    .family-divider span {
+      color: var(--gold);
+      font-size: 1.8rem;
+      filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.4));
+      animation: heartPulse 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes heartPulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.15); }
+    }
+
+    .family-divider .evam {
+      font-family: 'Yatra One', cursive;
+      font-size: 1rem;
+      color: var(--maroon);
+      letter-spacing: 3px;
+      background: var(--cream-dark);
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    @media(max-width:768px) {
+      .family-grid {
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
+        max-width: 480px;
+      }
+
+      .family-side {
+        text-align: center;
+        padding: 2.2rem 1.8rem;
+      }
+
+      .family-divider {
+        flex-direction: row;
+        gap: 1.5rem;
+        margin: 0.5rem 0;
+      }
+
+      .family-divider span {
+        font-size: 1.4rem;
+      }
+    }
+
+    /* ── MAP ── */
+    #location {
+      background: var(--dark);
+      padding-bottom: 5.5rem;
+    }
+
+    #location .sec-title {
+      color: var(--cream);
+    }
+
+    #location .sec-title em {
+      color: var(--gold);
+    }
+
+    #location .sec-body {
+      color: var(--gold-light);
+      opacity: 0.85;
+    }
+
+    #location .sec-tag {
+      color: var(--gold-light);
+      opacity: 0.85;
+    }
+
+    #location .thin-line {
+      background: var(--gold);
+    }
+
+    #map {
+      height: 440px;
+      width: 100%;
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+    }
+
+    .venue-chips {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .venue-chip {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1.5px solid var(--gold);
+      border-radius: 30px;
+      padding: 0.65rem 1.4rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .venue-chip:hover {
+      background: var(--gold);
+      color: var(--dark);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* ── BLESSINGS WALL ── */
+    #blessings {
+      background: linear-gradient(135deg, #130304 0%, #300A0E 50%, #130304 100%);
+      padding: 6.5rem 2rem;
+      position: relative;
+    }
+
+    #blessings .sec-title {
+      color: var(--cream);
+    }
+
+    #blessings .sec-title em {
+      color: var(--gold);
+    }
+
+    #blessings .sec-tag {
+      color: var(--gold-light);
+      opacity: 0.85;
+    }
+
+    #blessings .thin-line {
+      background: var(--gold);
+    }
+
+    #blessings .sec-body {
+      color: var(--gold-light);
+      opacity: 0.85;
+    }
+
+    .blessing-form-wrap {
+      max-width: 500px;
+      margin: 3rem auto 0;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .blessing-form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      color: var(--gold-light);
+      font-style: italic;
+      margin-bottom: 1.8rem;
+      text-align: center;
+    }
+
+    .blessing-input {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      color: var(--cream);
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 0.95rem;
+      margin-bottom: 1.1rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .blessing-input::placeholder {
+      color: rgba(246, 239, 226, 0.45);
+    }
+
+    .blessing-input:focus {
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+
+    textarea.blessing-input {
+      height: 100px;
+      resize: none;
+    }
+
+    .blessing-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--maroon);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .blessing-btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Blessings display wall */
+    .blessings-wall {
+      max-width: 900px;
+      margin: 3.5rem auto 0;
+      position: relative;
+      min-height: 280px;
+    }
+
+    .blessings-slider {
+      overflow: hidden;
+      position: relative;
+      border-radius: 16px;
+    }
+
+    .blessings-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .blessing-card {
+      min-width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .blessing-wall-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--gold);
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+
+    .blessing-ornament {
+      color: var(--gold);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 5px;
+    }
+
+    .blessing-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 3vw, 1.45rem);
+      color: var(--cream);
+      font-style: italic;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .blessing-author {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .slider-btn {
+      background: transparent;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: var(--gold);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slider-btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    .slider-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.25);
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .slider-dot.active {
+      background: var(--gold);
+      transform: scale(1.25);
+    }
+
+    .blessing-count {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      color: rgba(246, 239, 226, 0.5);
+      margin-top: 0.8rem;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 850px;
+      margin: 3rem auto 0;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(201, 169, 110, 0.25);
+      border-radius: 16px;
+      padding: 2.2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-gold);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .contact-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
+    }
+
+    .contact-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .contact-val {
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      line-height: 1.7;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      text-align: center;
+      padding: 4.5rem 2rem;
+      position: relative;
+      border-top: 1.5px solid var(--gold);
+    }
+
+    .footer-names {
+      font-family: 'Yatra One', cursive;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      font-weight: 400;
+    }
+
+    .footer-detail {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      color: var(--gold-light);
+      opacity: 0.7;
+    }
+
+    .footer-verse {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 0.9rem;
+      color: rgba(246, 239, 226, 0.65);
+      margin-top: 2.2rem;
+      line-height: 1.95;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Keyframes */
+    @keyframes bgZoom {
+      0% {
+        transform: scale(1.03) translate(0, 0);
+      }
+
+      100% {
+        transform: scale(1.08) translate(-5px, -5px);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Ambient Falling Petals -->
+  <canvas id="petalCanvas"></canvas>
+
+  <!-- Background Music Player -->
+  <button id="musicPlayBtn" class="music-player-btn" onclick="toggleMusic()">🎵</button>
+  <audio id="bgMusic" loop>
+    <source src="Vakratunda%20Mahakaya%20Suryakoti%20Samaprabha%F0%9F%99%8F%F0%9F%8F%BB%20_%20Spiritual%20Vibes%20_%20Bappa%20Status%20_%23ganpati%20%23bappa%20%23shorts%20%5BhzQqfRM-mtA%5D.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <!-- ═══ COVER ═══ -->
+  <section id="cover">
+    <div class="cover-bg"></div>
+    <div class="cover-overlay"></div>
+    <div class="cover-content">
+      <div class="ganesh-text">॥ श्री गणेशाय नमः ॥</div>
+      <div class="cover-tag">Shubh Vivah · शुभ विवाह</div>
+      <h1 class="cover-names">
+        यशवनी
+        <span class="amp">संग</span>
+        विशाल
+      </h1>
+      <div class="cover-divider">✦ ✦ ✦</div>
+      <div class="cover-date">06 JULY 2026 · KHALSA CLUB, BISTUPUR, JAMSHEDPUR</div>
+      <button class="scroll-btn" onclick="openInvitation()">
+        Open Invitation ✦
+      </button>
+    </div>
+  </section>
+
+
+  <nav id="main-nav">
+    <a href="#save-the-date">तिथि</a>
+    <span class="nav-heart">✦</span>
+    <a href="#events">कार्यक्रम</a>
+    <span class="nav-heart">✦</span>
+    <a href="#gallery">यादें</a>
+    <span class="nav-heart">✦</span>
+    <a href="#family">परिवार</a>
+    <span class="nav-heart">✦</span>
+    <a href="#location">स्थान</a>
+    <span class="nav-heart">✦</span>
+    <a href="#blessings">आशीर्वाद</a>
+    <span class="nav-heart">✦</span>
+    <a href="#contact">संपर्क</a>
+  </nav>
+
+  <!-- ═══ SAVE THE DATE ═══ -->
+  <section class="section" id="save-the-date">
+    <div class="sec-tag">✦ Save the Date · तिथि ✦</div>
+    <h2 class="sec-title">शुभ<em>विवाह</em></h2>
+    <div class="thin-line"></div>
+    <div class="date-glass-box">
+      <div class="date-num">06</div>
+      <div class="date-mo">जुलाई · July · 2026 · सोमवार</div>
+    </div>
+    <div class="countdown" id="countdown">
+      <div class="cd-unit">
+        <div class="cd-box">
+          <div class="cd-num" id="cd-d">--</div>
+          <div class="cd-lbl">Days</div>
+        </div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-box">
+          <div class="cd-num" id="cd-h">--</div>
+          <div class="cd-lbl">Hours</div>
+        </div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-box">
+          <div class="cd-num" id="cd-m">--</div>
+          <div class="cd-lbl">Minutes</div>
+        </div>
+      </div>
+      <div class="cd-unit">
+        <div class="cd-box">
+          <div class="cd-num" id="cd-s">--</div>
+          <div class="cd-lbl">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ EVENTS ═══ -->
+  <section class="section" id="events">
+    <div class="sec-tag">✦ वैवाहिक कार्यक्रम ✦</div>
+    <h2 class="sec-title">All <em>Celebrations</em></h2>
+    <div class="thin-line"></div>
+    <p class="sec-body">वैवाहिक कार्यक्रमों का विवरण नीचे दिया गया है।</p>
+
+    <div class="deck-container" id="events-deck">
+      <!-- Card 1: Bride Welcome / Intro -->
+      <div class="deck-card" onclick="nextEventCard()" data-event-name="Bride's Invitation"
+        data-event-name-hi="वधू आमंत्रण" data-event-date="शुभ विवाह समारोह"
+        data-event-venue="पुराना बस स्टैंड, एसपी बंगला के पीछे, शहडोल (म.प्र.)" data-event-icon="👰" data-event-badge="Welcome">
+        <img src="first_name_image.png" alt="Bride's Invitation">
+      </div>
+
+      <!-- Card 2: Dhanbati -->
+      <div class="deck-card" onclick="nextEventCard()" data-event-name="Dhanbati" data-event-name-hi="धनबती"
+        data-event-date="04 जुलाई 2026 · शनिवार (प्रातः)" data-event-venue="GP Slope Club House, KF1, Kadma"
+        data-event-icon="🪔" data-event-badge="Dhanbati">
+        <img src="Dhanvati_images.png" alt="Dhanbati">
+      </div>
+
+      <!-- Card 3: Mehndi -->
+      <div class="deck-card" onclick="nextEventCard()" data-event-name="Mehndi Ceremony"
+        data-event-name-hi="मेहंदी उत्सव" data-event-date="04 जुलाई 2026 · शनिवार (संध्या)"
+        data-event-venue="GP Slope Club House, KF1, Kadma" data-event-icon="🌿" data-event-badge="Mehndi">
+        <img src="mehndi_image.png" alt="Mehndi">
+      </div>
+
+      <!-- Card 4: Haldi -->
+      <div class="deck-card" onclick="nextEventCard()" data-event-name="Haldi Ceremony" data-event-name-hi="हल्दी उत्सव"
+        data-event-date="05 जुलाई 2026 · रविवार (प्रातः)" data-event-venue="GP Slope Club House, KF1, Kadma"
+        data-event-icon="🌸" data-event-badge="Ritual">
+        <img src="haldi_image.png" alt="Haldi">
+      </div>
+
+      <!-- Card 5: Engagement & Sangeet -->
+      <div class="deck-card" onclick="nextEventCard()" data-event-name="Engagement & Sangeet"
+        data-event-name-hi="सगाई एवं संगीत" data-event-date="05 जुलाई 2026 · रविवार (संध्या)"
+        data-event-venue="GP Slope Club House, KF1, Kadma" data-event-icon="💍" data-event-badge="Sangeet">
+        <img src="engengment_image.png" alt="Engagement & Sangeet">
+      </div>
+
+      <!-- Card 6: Magarmatti, Mandap, Devpujan -->
+      <div class="deck-card" onclick="nextEventCard()" data-event-name="Magarmatti, Mandap, Devpujan"
+        data-event-name-hi="मटकोर, मण्डप एवं देवपूजन" data-event-date="06 जुलाई 2026 · सोमवार (प्रातः)"
+        data-event-venue="GP Slope Club House, KF1, Kadma" data-event-icon="⛩️" data-event-badge="Devpujan">
+        <img src="magarmatti_image.png" alt="Magarmatti, Mandap, Devpujan">
+      </div>
+
+      <!-- Card 7: Shubh Vivah -->
+      <div class="deck-card" onclick="nextEventCard()" data-event-name="Shubh Vivah" data-event-name-hi="शुभ विवाह"
+        data-event-date="06 जुलाई 2026 · सोमवार (रात्रि में)" data-event-venue="Khalsa Club, Bistupur, Jamshedpur"
+        data-event-icon="🤵👰" data-event-badge="Wedding">
+        <img src="vivah_image.png" alt="Shubh Vivah">
+      </div>
+
+      <!-- Card 8: Shubh Vidayi -->
+      <div class="deck-card" onclick="nextEventCard()" data-event-name="Shubh Vidayi" data-event-name-hi="शुभ विदाई"
+        data-event-date="07 जुलाई 2026 · मंगलवार (प्रातः)" data-event-venue="Khalsa Club, Bistupur, Jamshedpur"
+        data-event-icon="🚗" data-event-badge="Vidayi">
+        <img src="vidai_image.png" alt="Shubh Vidayi">
+      </div>
+    </div>
+
+    <div class="deck-controls">
+      <button class="deck-btn" onclick="prevEventCard(event)">&#8592;</button>
+      <div class="deck-indicator" id="events-indicator">01 / 08</div>
+      <button class="deck-btn" onclick="nextEventCard(event)">&#8594;</button>
+    </div>
+
+    <!-- Dynamic active event details card below deck controls -->
+    <div class="details-card-wrapper">
+      <div class="active-event-details-card" id="event-details-card">
+        <div class="deck-header">
+          <div class="event-icon" id="detail-icon">👰</div>
+          <div class="event-badge" id="detail-badge">Welcome</div>
+        </div>
+        <div>
+          <div class="event-name" id="detail-name">Bride's Invitation</div>
+          <div class="event-name-hi" id="detail-name-hi">वधू आमंत्रण</div>
+          <div class="event-date" id="detail-date">शुभ विवाह समारोह</div>
+        </div>
+        <div class="event-venue" id="detail-venue">पुराना बस स्टैंड, एसपी बंगला के पीछे, शहडोल (म.प्र.)</div>
+      </div>
+    </div>
+
+    <p class="sec-body" style="margin-top:2.5rem;font-size:0.85rem;color:#8b6040;max-width:520px;line-height:1.7;">
+      <strong>बारात:</strong> बारात 06-07-2026 सोमवार संध्या 6:00 बजे पीपलधारी शिव हनुमान मंदिर, शास्त्रीनगर ब्लॉक नं-3,
+      कदमा से प्रस्थान कर विवाह स्थल (खालसा क्लब, बिस्टुपुर) पहुंचेगी, तत्पश्चात बारात अगवानी एवं द्वार पूजा होगी।
+    </p>
+  </section>
+
+  <!-- ═══ GALLERY ═══ -->
+  <section class="section" id="gallery">
+    <div class="sec-tag">✦ Pre-Wedding memories · यादें ✦</div>
+    <h2 class="sec-title">Glimpses of <em>Love</em></h2>
+    <div class="thin-line"></div>
+    <p class="sec-body">यशवनी एवं विशाल के सुनहरे पलों की कुछ झलकियाँ</p>
+
+    <div class="gallery-container" id="gallery-deck">
+      <!-- Card 1 -->
+      <div class="gallery-card" onclick="nextGalleryCard()">
+        <img src="pre_wedding_1.png" alt="Pre Wedding 1">
+        <div class="gallery-caption">A Beautiful Beginning 🌹</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="gallery-card" onclick="nextGalleryCard()">
+        <img src="pre_wedding_2.png" alt="Pre Wedding 2">
+        <div class="gallery-caption">Hand in Hand, Together Forever ❤️</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="gallery-card" onclick="nextGalleryCard()">
+        <img src="wedding_decor_mandap.png" alt="Wedding Mandap">
+        <div class="gallery-caption">The Sacred Vows of Love ✦</div>
+      </div>
+    </div>
+
+    <div class="deck-controls" style="margin-top: 2.5rem;">
+      <button class="deck-btn" onclick="prevGalleryCard(event)">&#8592;</button>
+      <div class="deck-indicator" id="gallery-indicator">01 / 03</div>
+      <button class="deck-btn" onclick="nextGalleryCard(event)">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- ═══ FAMILY ═══ -->
+  <section class="section" id="family">
+    <img class="family-watermark" src="ganesh_watermark.png" alt="" aria-hidden="true" loading="lazy">
+    <div class="sec-tag">✦ परिवार ✦</div>
+    <h2 class="sec-title">Our <em>Families</em></h2>
+    <img src="wedding_decor_shehnai.png" alt="Shehnai Divider" class="family-decor-img">
+    <p class="sec-body">परम पिता परमेश्वर की असीम अनुकम्पा से</p>
+    <div class="family-grid">
+      <div class="family-side">
+        <div class="family-label">Bride's Side · वधू पक्ष</div>
+        <div class="family-name-hi">आयु॰ यशवनी गुप्ता</div>
+        <div class="family-info">
+          सुपौत्री: श्रीमती राजमनी देवी एवं श्री बालकेश्वर गुप्ता<br>
+          सुपुत्री: श्रीमती किरण एवं श्री कृष्ण कुमार गुप्ता<br><br>
+          ग्राम: पुराना बस स्टैंड, एसपी बंगला के पीछे,<br>
+          शहडोल (म.प्र.)
+        </div>
+      </div>
+      <div class="family-divider">
+        <span>❤</span>
+        <div class="evam">एवम्</div>
+        <span>❤</span>
+      </div>
+      <div class="family-side">
+        <div class="family-label">Groom's Side · वर पक्ष</div>
+        <div class="family-name-hi">चि॰ विशाल गुप्ता</div>
+        <div class="family-info">
+          सुपौत्र: श्रीमती कौशल्या देवी एवं श्री धनजी साह<br>
+          सुपुत्र: श्रीमती मुन्नी देवी एवं श्री राजेश गुप्ता<br><br>
+          ग्राम + पो– शास्त्रीनगर, ब्लॉक नं-3,<br>
+          कदमा, जमशेदपुर – 831005
+        </div>
+      </div>
+    </div>
+    <p class="sec-body" style="margin-top:2.5rem;font-style:italic;color:#8b6040;">
+      की मांगलिक बेला पर पधार कर वर-वधू को शुभाशीर्वाद प्रदान कर हमें अनुग्रहीत करें।
+    </p>
+  </section>
+
+  <!-- ═══ MAP / LOCATION ═══ -->
+  <section class="section" id="location">
+    <div class="sec-tag">✦ Venue Location ✦</div>
+    <h2 class="sec-title">Find <em>Us Here</em></h2>
+    <div class="thin-line"></div>
+    <p class="sec-body">Click the markers below to zoom and view venue details</p>
+    <div class="venue-chips">
+      <button class="venue-chip" onclick="flyTo(22.7925,86.1775,'Khalsa Club, Bistupur')">📍 Khalsa Club –
+        Wedding</button>
+      <button class="venue-chip" onclick="flyTo(22.7983,86.1700,'GP Slope Club, Kadma')">📍 GP Slope Club –
+        Events</button>
+      <button class="venue-chip" onclick="flyTo(22.7994,86.1642,'Peepaldhara Shiv Hanuman Mandir')">📍 Barat Start
+        Point</button>
+    </div>
+    <div id="map"></div>
+  </section>
+
+  <!-- ═══ BLESSINGS WALL ═══ -->
+  <section id="blessings">
+    <div style="text-align:center;padding-top:5rem;">
+      <div class="sec-tag">✦ Ashirwad Wall ✦</div>
+      <h2 class="sec-title" style="color:#f5e6d0;">Send Your <em>Blessings</em></h2>
+      <div class="thin-line"></div>
+      <p class="sec-body" style="color:#e0c9a6;">अपना आशीर्वाद और शुभकामनाएं भेजें — यहां सभी के नाम के साथ दिखाई देंगे
+      </p>
+    </div>
+
+    <!-- Send form -->
+    <div class="blessing-form-wrap" style="margin-top:2.5rem;">
+      <div class="blessing-form-title">Send us your Blessings 🌹</div>
+      <input class="blessing-input" type="text" id="bl-name" placeholder="Your Name (आपका नाम)">
+      <textarea class="blessing-input" id="bl-msg" placeholder="Your Wishes / आपकी शुभकामनाएं..."></textarea>
+      <button class="blessing-btn" onclick="addBlessing()">Send Blessings ✦</button>
+    </div>
+
+    <!-- Wall display -->
+    <div class="blessings-wall">
+      <div class="blessings-slider">
+        <div class="blessings-track" id="blessings-track">
+          <!-- cards injected by JS -->
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn" onclick="slideBlessing(-1)">&#8592;</button>
+        <div class="slider-dots" id="blessing-dots"></div>
+        <button class="slider-btn" onclick="slideBlessing(1)">&#8594;</button>
+      </div>
+      <div class="blessing-count" id="blessing-count">0 Blessings Received</div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="section" id="contact" style="background:var(--cream);">
+    <div class="sec-tag">✦ संपर्क करें ✦</div>
+    <h2 class="sec-title">Get in <em>Touch</em></h2>
+    <div class="thin-line"></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div class="contact-name">Gaurav Gupta</div>
+        <div class="contact-val">91 62643 51490</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div class="contact-name">Shanu Kumar</div>
+        <div class="contact-val">+91 70041 64821</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <div class="contact-name">पता</div>
+        <div class="contact-val">पुराना बस स्टैंड, एसपी बंगला के पीछे,<br>शहडोल (म.प्र.)</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🏛️</div>
+        <div class="contact-name">Main Venue</div>
+        <div class="contact-val">Khalsa Club<br>Bistupur, Jamshedpur</div>
+      </div>
+    </div>
+    <p class="sec-body" style="margin-top:2.5rem;font-size:0.82rem;font-style:italic;color:#8b6040;">
+      विशेष आग्रह: मेरे मामू की शादी में जलूल-जलूल आना – लक्ष्य, वामिका
+    </p>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-names">यशवनी ❤ विशाल</div>
+    <div class="footer-detail">06 JULY 2026 · KHALSA CLUB, BISTUPUR, JAMSHEDPUR</div>
+    <div class="footer-verse">
+      सात फेरों का वादा, सात जन्मों का साथ,<br>
+      तेरे प्यार में ही बसी है मेरी सारी कायनात।<br>
+      अब हर सुबह तेरे नाम से शुरू हो,<br>
+      और हर रात तुझमें ही सिमट जाए बात ॥
+    </div>
+  </footer>
+
+  <script>
+    // ── CONFETTI & OPEN INVITATION ──
+    function openInvitation() {
+      const targetSec = document.getElementById('save-the-date');
+      if (targetSec) {
+        targetSec.scrollIntoView({ behavior: 'smooth' });
+      }
+      if (window.confetti) {
+        confetti({
+          particleCount: 120,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: ['#D4AF37', '#58111A', '#E8D5A0', '#FFD700']
+        });
+      }
+      // Start music when card is opened
+      startMusic();
+    }
+
+    function startMusic() {
+      const audio = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicPlayBtn');
+      if (audio && audio.paused) {
+        audio.play().then(() => {
+          btn.classList.add('playing');
+          btn.innerHTML = '⏸';
+        }).catch(err => console.log('Audio playback blocked: ', err));
+      }
+    }
+
+    // ── BACKGROUND MUSIC ──
+    function toggleMusic() {
+      const audio = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicPlayBtn');
+      if (audio.paused) {
+        audio.play().then(() => {
+          btn.classList.add('playing');
+          btn.innerHTML = '⏸';
+        }).catch(err => {
+          console.log('Audio playback blocked: ', err);
+          alert('Click anywhere on the screen first, then play music!');
+        });
+      } else {
+        audio.pause();
+        btn.classList.remove('playing');
+        btn.innerHTML = '🎵';
+      }
+    }
+
+    // Play music automatically upon first click on screen
+    document.addEventListener('click', function () {
+      startMusic();
+    }, { once: true });
+
+    // ── AMBIENT GOLD DUST SHIMMER ──
+    (function initSparkles() {
+      const canvas = document.getElementById('petalCanvas');
+      const ctx = canvas.getContext('2d');
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      const particleCount = 50;
+      const particles = [];
+      const particleColors = [
+        [212, 175, 55],   /* Gold */
+        [232, 213, 160],  /* Champagne */
+        [255, 255, 255],  /* White sparkle */
+        [244, 196, 48]    /* Deep Gold */
+      ];
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          r: Math.random() * 2 + 1, /* Tiny particles (radius 1px to 3px) */
+          d: Math.random() * particleCount,
+          color: particleColors[Math.floor(Math.random() * particleColors.length)],
+          ySpeed: Math.random() * 0.35 + 0.15, /* Very slow drift */
+          xSpeed: Math.random() * 0.2 - 0.1,
+          opacity: Math.random() * 0.65 + 0.15,
+          pulseSpeed: Math.random() * 0.015 + 0.005
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < particleCount; i++) {
+          const p = particles[i];
+          
+          // Animate shimmer (opacity pulse)
+          p.opacity += p.pulseSpeed;
+          if (p.opacity > 0.85 || p.opacity < 0.15) {
+            p.pulseSpeed = -p.pulseSpeed;
+          }
+
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, false);
+          ctx.fillStyle = `rgba(${p.color[0]}, ${p.color[1]}, ${p.color[2]}, ${p.opacity.toFixed(2)})`;
+          
+          // Glow effect for a premium sparkle
+          ctx.shadowBlur = 5;
+          ctx.shadowColor = 'rgba(212, 175, 55, 0.45)';
+          
+          ctx.fill();
+          ctx.restore();
+
+          // Movement
+          p.y += p.ySpeed;
+          p.x += p.xSpeed + Math.sin(p.d) * 0.15;
+          p.d += 0.005;
+
+          // Reset offscreen particles
+          if (p.y > height) {
+            particles[i] = {
+              x: Math.random() * width,
+              y: -10,
+              r: p.r,
+              d: p.d,
+              color: p.color,
+              ySpeed: p.ySpeed,
+              xSpeed: p.xSpeed,
+              opacity: Math.random() * 0.65 + 0.15,
+              pulseSpeed: p.pulseSpeed
+            };
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    // ── COUNTDOWN ──
+    (function tick() {
+      const target = new Date('2026-07-06T18:00:00').getTime();
+      const diff = target - Date.now();
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<div style="font-family:Cormorant Garamond,serif;font-size:1.6rem;color:#8B2020;font-style:italic;font-weight:600;margin-top:1.5rem;">🌹 आज का शुभ दिन है! विवाह समारोह में आपका स्वागत है।</div>';
+        return;
+      }
+      document.getElementById('cd-d').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+      document.getElementById('cd-h').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+      document.getElementById('cd-m').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+      document.getElementById('cd-s').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+      setTimeout(tick, 1000);
+    })();
+
+    // ── 3D STACKED EVENT CARDS ──
+    let currentEventIndex = 0;
+    const eventCards = document.querySelectorAll('#events-deck .deck-card');
+    const totalEvents = eventCards.length;
+    const eventsIndicator = document.getElementById('events-indicator');
+
+    function updateEventDeck() {
+      eventCards.forEach((card, idx) => {
+        // Calculate relative card stack index
+        let relIndex = (idx - currentEventIndex + totalEvents) % totalEvents;
+
+        if (relIndex === 0) {
+          // Active card on top
+          card.style.transform = 'translate3d(0, 0, 0) scale(1) rotate(0deg)';
+          card.style.zIndex = '5';
+          card.style.opacity = '1';
+          card.style.pointerEvents = 'auto';
+        } else if (relIndex === 1) {
+          // Stack card 2
+          card.style.transform = 'translate3d(0, 16px, -40px) scale(0.94) rotate(1.5deg)';
+          card.style.zIndex = '4';
+          card.style.opacity = '0.92';
+          card.style.pointerEvents = 'none';
+        } else if (relIndex === 2) {
+          // Stack card 3
+          card.style.transform = 'translate3d(0, 32px, -80px) scale(0.88) rotate(-1.5deg)';
+          card.style.zIndex = '3';
+          card.style.opacity = '0.72';
+          card.style.pointerEvents = 'none';
+        } else if (relIndex === 3) {
+          // Stack card 4
+          card.style.transform = 'translate3d(0, 48px, -120px) scale(0.82) rotate(2deg)';
+          card.style.zIndex = '2';
+          card.style.opacity = '0.45';
+          card.style.pointerEvents = 'none';
+        } else {
+          // Hidden cards in background
+          card.style.transform = 'translate3d(0, 60px, -160px) scale(0.76) rotate(0deg)';
+          card.style.zIndex = '1';
+          card.style.opacity = '0';
+          card.style.pointerEvents = 'none';
+        }
+      });
+
+      // Update indicator
+      eventsIndicator.textContent = String(currentEventIndex + 1).padStart(2, '0') + ' / ' + String(totalEvents).padStart(2, '0');
+
+      // Dynamic details card update
+      const activeCard = eventCards[currentEventIndex];
+      if (activeCard) {
+        const name = activeCard.getAttribute('data-event-name');
+        const nameHi = activeCard.getAttribute('data-event-name-hi');
+        const date = activeCard.getAttribute('data-event-date');
+        const venue = activeCard.getAttribute('data-event-venue');
+        const icon = activeCard.getAttribute('data-event-icon');
+        const badge = activeCard.getAttribute('data-event-badge');
+
+        const detailsCard = document.getElementById('event-details-card');
+        if (detailsCard) {
+          detailsCard.style.opacity = 0;
+          detailsCard.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            document.getElementById('detail-icon').textContent = icon;
+            document.getElementById('detail-badge').textContent = badge;
+            document.getElementById('detail-name').textContent = name;
+            document.getElementById('detail-name-hi').textContent = nameHi;
+            document.getElementById('detail-date').textContent = date;
+            document.getElementById('detail-venue').textContent = venue;
+            detailsCard.style.opacity = 1;
+            detailsCard.style.transform = 'translateY(0)';
+          }, 200);
+        }
+      }
+    }
+
+    window.nextEventCard = function (e) {
+      if (e) e.stopPropagation();
+      const activeCard = eventCards[currentEventIndex];
+      activeCard.style.transform = 'translate3d(-125%, 15px, 30px) rotate(-12deg)';
+      activeCard.style.opacity = '0';
+
+      setTimeout(() => {
+        currentEventIndex = (currentEventIndex + 1) % totalEvents;
+        updateEventDeck();
+      }, 250);
+    };
+
+    window.prevEventCard = function (e) {
+      if (e) e.stopPropagation();
+      const lastIndex = (currentEventIndex - 1 + totalEvents) % totalEvents;
+      const lastCard = eventCards[lastIndex];
+
+      // Set position to slide back in from the left
+      lastCard.style.transform = 'translate3d(-125%, 15px, 30px) rotate(-12deg)';
+      lastCard.style.opacity = '0';
+      lastCard.style.zIndex = '6';
+
+      setTimeout(() => {
+        currentEventIndex = lastIndex;
+        updateEventDeck();
+      }, 80);
+    };
+
+    // ── 3D PRE-WEDDING GALLERY ──
+    let currentGalleryIndex = 0;
+    const galleryCards = document.querySelectorAll('#gallery-deck .gallery-card');
+    const totalGallery = galleryCards.length;
+    const galleryIndicator = document.getElementById('gallery-indicator');
+
+    function updateGalleryDeck() {
+      galleryCards.forEach((card, idx) => {
+        let relIndex = (idx - currentGalleryIndex + totalGallery) % totalGallery;
+
+        if (relIndex === 0) {
+          card.style.transform = 'translate3d(0, 0, 0) scale(1) rotate(0deg)';
+          card.style.zIndex = '5';
+          card.style.opacity = '1';
+          card.style.pointerEvents = 'auto';
+        } else if (relIndex === 1) {
+          card.style.transform = 'translate3d(12px, -12px, -35px) scale(0.95) rotate(2deg)';
+          card.style.zIndex = '4';
+          card.style.opacity = '0.9';
+          card.style.pointerEvents = 'none';
+        } else if (relIndex === 2) {
+          card.style.transform = 'translate3d(24px, -24px, -70px) scale(0.90) rotate(-2deg)';
+          card.style.zIndex = '3';
+          card.style.opacity = '0.7';
+          card.style.pointerEvents = 'none';
+        } else {
+          card.style.transform = 'translate3d(36px, -36px, -105px) scale(0.85) rotate(0deg)';
+          card.style.zIndex = '1';
+          card.style.opacity = '0';
+          card.style.pointerEvents = 'none';
+        }
+      });
+      galleryIndicator.textContent = String(currentGalleryIndex + 1).padStart(2, '0') + ' / ' + String(totalGallery).padStart(2, '0');
+    }
+
+    window.nextGalleryCard = function (e) {
+      if (e) e.stopPropagation();
+      const activeCard = galleryCards[currentGalleryIndex];
+      activeCard.style.transform = 'translate3d(125%, 15px, 30px) rotate(12deg)';
+      activeCard.style.opacity = '0';
+
+      setTimeout(() => {
+        currentGalleryIndex = (currentGalleryIndex + 1) % totalGallery;
+        updateGalleryDeck();
+      }, 250);
+    };
+
+    window.prevGalleryCard = function (e) {
+      if (e) e.stopPropagation();
+      const lastIndex = (currentGalleryIndex - 1 + totalGallery) % totalGallery;
+      const lastCard = galleryCards[lastIndex];
+      lastCard.style.transform = 'translate3d(125%, 15px, 30px) rotate(12deg)';
+      lastCard.style.opacity = '0';
+      lastCard.style.zIndex = '6';
+
+      setTimeout(() => {
+        currentGalleryIndex = lastIndex;
+        updateGalleryDeck();
+      }, 80);
+    };
+
+    // Initialize event & gallery decks
+    updateEventDeck();
+    updateGalleryDeck();
+
+    // ── LEAFLET MAP & MARKERS ──
+    // Map initialized centered between Bistupur and Kadma
+    const map = L.map('map').setView([22.7958, 86.1740], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors', maxZoom: 19
+    }).addTo(map);
+
+    // Luxury custom pin design with dark red background and gold border
+    const goldIcon = L.divIcon({
+      html: '<div style="background:#58111A;width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid #D4AF37;box-shadow:0 4px 12px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;"><div style="background:#D4AF37;width:8px;height:8px;border-radius:50%"></div></div>',
+      iconSize: [28, 28], iconAnchor: [14, 28], popupAnchor: [0, -30], className: ''
+    });
+    const blueIcon = L.divIcon({
+      html: '<div style="background:#185FA5;width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid #D4AF37;box-shadow:0 4px 12px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;"><div style="background:#D4AF37;width:8px;height:8px;border-radius:50%"></div></div>',
+      iconSize: [28, 28], iconAnchor: [14, 28], popupAnchor: [0, -30], className: ''
+    });
+
+    const venues = [
+      {
+        lat: 22.7925, lng: 86.1775, icon: goldIcon,
+        popup: '<b style="color:#58111A;font-family:Cinzel,serif;font-size:0.95rem">🏛 Khalsa Club</b><br>N Road, Bistupur, Jamshedpur<br><i>Shubh Vivah & Preetibhoj</i><br>06 July 2026, रात्रि<br><br><a href="https://www.google.com/maps/dir/?api=1&destination=22.7925,86.1775" target="_blank" style="color:#D4AF37;text-decoration:underline;font-weight:600;font-family:Montserrat,sans-serif;font-size:0.75rem;">🚗 Google Maps Navigation</a>'
+      },
+      {
+        lat: 22.7983, lng: 86.1700, icon: blueIcon,
+        popup: '<b style="color:#185FA5;font-family:Cinzel,serif;font-size:0.95rem">🏠 GP Slope Club House</b><br>Green Enclave, Kadma<br><i>Matkour, Sagai, Sangeet, Haldi</i><br>04–06 July 2026<br><br><a href="https://www.google.com/maps/dir/?api=1&destination=22.7983,86.1700" target="_blank" style="color:#D4AF37;text-decoration:underline;font-weight:600;font-family:Montserrat,sans-serif;font-size:0.75rem;">🚗 Google Maps Navigation</a>'
+      },
+      {
+        lat: 22.7994, lng: 86.1642, icon: blueIcon,
+        popup: '<b style="color:#5a3e2b;font-family:Cinzel,serif;font-size:0.95rem">🛕 Peepaldhara Shiv Hanuman Mandir</b><br>Block No-3, Shastri Nagar, Kadma<br><i>Barat Start Point</i><br>06 July 2026, 6:00 PM<br><br><a href="https://www.google.com/maps/dir/?api=1&destination=22.7994,86.1642" target="_blank" style="color:#D4AF37;text-decoration:underline;font-weight:600;font-family:Montserrat,sans-serif;font-size:0.75rem;">🚗 Google Maps Navigation</a>'
+      }
+    ];
+
+    venues.forEach(v => {
+      L.marker([v.lat, v.lng], { icon: v.icon })
+        .addTo(map)
+        .bindPopup(v.popup, { maxWidth: 250 });
+    });
+
+    window.flyTo = function (lat, lng, label) {
+      map.flyTo([lat, lng], 16, { animate: true, duration: 1.2 });
+      map.eachLayer(l => { if (l instanceof L.Marker) { if (Math.abs(l.getLatLng().lat - lat) < 0.001) l.openPopup(); } });
+    };
+
+    // ── BLESSINGS WALL ──
+    const defaultBlessings = [
+      { name: 'Chhaganlal Ji', msg: 'यशवनी और विशाल को हमारी हार्दिक शुभकामनाएं! भगवान आप दोनों को सदा सुखी रखें। 🙏' },
+      { name: 'Laxya & Vamika', msg: 'Finally the big day! Jamshedpur se Shahdol tak ki ye love story hamesha yaadgar rahegi. Best wishes! 💕' },
+      { name: 'Dayal Ji', msg: 'सात जन्मों का साथ मिले, जीवन में खुशियों की बरसात हो। आप दोनों को ढेर सारा आशीर्वाद! 🌸' },
+      { name: 'Santosh Ji', msg: 'Bahut badhai ho! Yashvani and Vishal ko humare taraf se prem aur shubhkamnayen. ❤️' },
+      { name: 'Aneel Ji', msg: 'भगवान आप दोनों की जोड़ी को हमेशा एक साथ रखें। विवाह की बहुत-बहुत बधाई! 🎊' }
+    ];
+
+    let blessings = [...defaultBlessings];
+    let currentSlide = 0;
+
+    function renderBlessings() {
+      const track = document.getElementById('blessings-track');
+      const dots = document.getElementById('blessing-dots');
+      track.innerHTML = blessings.map((b, i) => `
+    <div class="blessing-card">
+      <div class="blessing-wall-title">Blessings Wall 🌹</div>
+      <div class="blessing-ornament">✦ ✦ ✦</div>
+      <div class="blessing-text">"${b.msg}"</div>
+      <div class="blessing-author">— ${b.name}</div>
+    </div>
+  `).join('');
+      dots.innerHTML = blessings.map((_, i) => `<div class="slider-dot ${i === currentSlide ? 'active' : ''}" onclick="goToSlide(${i})"></div>`).join('');
+      document.getElementById('blessing-count').textContent = blessings.length + ' Blessings Received';
+      updateSlide();
+    }
+
+    function updateSlide() {
+      document.getElementById('blessings-track').style.transform = `translateX(-${currentSlide * 100}%)`;
+      document.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+
+    window.goToSlide = function (i) { currentSlide = i; updateSlide(); };
+    window.slideBlessing = function (dir) {
+      currentSlide = (currentSlide + dir + blessings.length) % blessings.length;
+      updateSlide();
+    };
+
+    window.addBlessing = function () {
+      const name = document.getElementById('bl-name').value.trim();
+      const msg = document.getElementById('bl-msg').value.trim();
+      if (!name || !msg) { alert('Please enter your name and message.'); return; }
+      blessings.push({ name, msg });
+      document.getElementById('bl-name').value = '';
+      document.getElementById('bl-msg').value = '';
+      currentSlide = blessings.length - 1;
+      renderBlessings();
+      document.getElementById('blessings-track').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    };
+
+    renderBlessings();
+
+    // Auto-advance blessings wall slide
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % blessings.length;
+      updateSlide();
+    }, 5000);
+  </script>
+</body>
+
+</html>
